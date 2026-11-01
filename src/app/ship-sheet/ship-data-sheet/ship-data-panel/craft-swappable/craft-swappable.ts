@@ -1,0 +1,120 @@
+import { Component, computed, ElementRef, input, signal } from '@angular/core';
+import { Fighters, Ship } from '../../../../data/pp/types';
+
+type SwappableFighter = Fighters & { originalNumber: number; assignedNumber: number };
+
+@Component({
+  imports: [],
+  selector: 'app-craft-swappable',
+  styleUrl: './craft-swappable.scss',
+  templateUrl: './craft-swappable.html',
+})
+export class CraftSwappable {
+  ship = input.required<Ship>();
+  swappableCraftOpen = signal(false);
+  assignedCraft = signal<SwappableFighter[]>([]);
+
+  hugeHangars = computed(() =>
+    parseInt(
+      this.ship()
+        .traits?.find((trait) => trait.toLowerCase().startsWith('huge hangars'))
+        ?.split(' ')[2] || '0',
+    ),
+  );
+
+  craftTotal = computed(
+    () => this.hugeHangars() || this.ship().craft?.reduce((a, c) => a + (c.number || 0), 0) || 0,
+  );
+  craftAssigned = computed(() =>
+    this.assignedCraft().reduce((a, c) => {
+      return (
+        a +
+        (this.hugeHangars() && c.name === "Atas'da Breaching Pod"
+          ? 0
+          : (c.assignedNumber || 0) * (c.price || 1))
+      );
+    }, 0),
+  );
+
+  openSwappableCraft = (open: boolean) => this.swappableCraftOpen.set(open);
+
+  changeCraft = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    if (!target) return;
+    const {
+      value,
+      dataset: { id = '' },
+    } = target;
+
+    const craft = this.assignedCraft().find((craft) => craft.id === Number.parseInt(id))!;
+    const oldNumber = craft.assignedNumber;
+    const valueInt = Number.parseInt(value);
+    craft.assignedNumber = valueInt;
+
+    let canChange = true;
+    // No negative fighter numbers
+    if (valueInt < 0) {
+      canChange = false;
+    }
+    // Total fighters can't exceed total allowed number
+    if (
+      this.assignedCraft().reduce(
+        (a: number, c) =>
+          a + (c.name === "Atas'da Breaching Pod" ? 0 : c.assignedNumber * (c.price || 1)),
+        0,
+      ) > this.craftTotal()
+    ) {
+      canChange = false;
+    }
+
+    // Can't reduce non-swap-outable fighters below initial value
+    if (!craft.swapOut && craft.assignedNumber < craft.originalNumber) {
+      canChange = false;
+    }
+
+    // Can't increase non-swap-innable fighters above initial value
+    if (!craft.swapIn && craft.assignedNumber > craft.originalNumber) {
+      canChange = false;
+    }
+
+    if (!canChange) {
+      craft.assignedNumber = oldNumber;
+      target.value = oldNumber.toString();
+    }
+    this.assignedCraft.set(this.assignedCraft());
+  };
+
+  setSwappableCraft = () => {
+    const newCraft: SwappableFighter[] = this.ship().allFighters?.map((fighter) => {
+      return { ...fighter, originalNumber: 0, assignedNumber: 0 };
+    }) || [];
+    this.ship().craft?.forEach((craft) => {
+      const craftToUpdate = newCraft.find((c) => c.name === craft.name);
+      if (craftToUpdate) {
+        craftToUpdate.originalNumber = craft.number;
+        craftToUpdate.assignedNumber = craft.number;
+      } else {
+        newCraft.push({
+          id: 0,
+					name: '',
+          ...craft,
+          source: this.ship().source,
+          assignedNumber: craft.number,
+          originalNumber: craft.number,
+        });
+      }
+    });
+    this.assignedCraft.set(newCraft);
+  };
+
+  constructor(private elementRef: ElementRef) {
+    this.elementRef.nativeElement.style.gridColumn = 'span 2';
+  }
+
+  ngOnInit() {
+    this.setSwappableCraft();
+    if (this.hugeHangars()) {
+      this.swappableCraftOpen.set(true);
+    }
+  }
+}

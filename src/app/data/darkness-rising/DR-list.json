@@ -1,0 +1,1829 @@
+{
+  "Levels": [
+    { "LevelID": 1, "LevelName": "Patrol" },
+    { "LevelID": 2, "LevelName": "Skirmish" },
+    { "LevelID": 3, "LevelName": "Raid" },
+    { "LevelID": 4, "LevelName": "Battle" },
+    { "LevelID": 5, "LevelName": "War" },
+    { "LevelID": 6, "LevelName": "Armageddon" },
+    { "LevelID": 7, "LevelName": "Ancient" }
+  ],
+  "Races": [
+    { "RaceID": 1, "RaceName": "Abbai Matriarchy" },
+    { "RaceID": 29, "RaceName": "Anla'shok" },
+    { "RaceID": 2, "RaceName": "Brakiri Syndicracy" },
+    { "RaceID": 14, "RaceName": "Centauri Republic" },
+    { "RaceID": 15, "RaceName": "Civilian/Generic" },
+    { "RaceID": 16, "RaceName": "Dilgar Imperium" },
+    { "RaceID": 4, "RaceName": "Drakh" },
+    { "RaceID": 3, "RaceName": "Drazi Freehold" },
+    { "RaceID": 28, "RaceName": "Earth Alliance" },
+    { "RaceID": 27, "RaceName": "Gaim Intelligence" },
+    { "RaceID": 17, "RaceName": "Interstellar Alliance" },
+    { "RaceID": 9, "RaceName": "Minbari Federation" },
+    { "RaceID": 8, "RaceName": "Narn Regime" },
+    { "RaceID": 21, "RaceName": "pak'ma'ra" },
+    { "RaceID": 24, "RaceName": "Psi Corps" },
+    { "RaceID": 10, "RaceName": "Raiders" },
+    { "RaceID": 11, "RaceName": "Shadows" },
+    { "RaceID": 12, "RaceName": "Vorlon Empire" },
+    { "RaceID": 13, "RaceName": "Vree Conglomerate" },
+    { "RaceID": 18, "RaceName": "Ancients" },
+    { "RaceID": 19, "RaceName": "Argent's Crusaders" },
+    { "RaceID": 20, "RaceName": "Ghosts Of Omelos" },
+    { "RaceID": 22, "RaceName": "Miscellaneous" },
+    { "RaceID": 25, "RaceName": "Dilgar Era Raiders" },
+    { "RaceID": 26, "RaceName": "Markab" },
+    { "RaceID": 23, "RaceName": "Gaim Intelligence (OLD)" }
+  ],
+  "Ships": [
+    {
+      "ShipID": 425,
+      "ShipName": "Apollo",
+      "RaceID": 28,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 426,
+      "ShipName": "Artemis",
+      "RaceID": 28,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 427,
+      "ShipName": "Artemis Escort",
+      "RaceID": 28,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 428,
+      "ShipName": "Aurora Starfury",
+      "RaceID": 28,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 4,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 429,
+      "ShipName": "Dark Fury",
+      "RaceID": 28,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 3,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 430,
+      "ShipName": "Pathfinder",
+      "RaceID": 28,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 431,
+      "ShipName": "Dominator",
+      "RaceID": 28,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 432,
+      "ShipName": "Explorer",
+      "RaceID": 28,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 433,
+      "ShipName": "Exterminator",
+      "RaceID": 28,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 434,
+      "ShipName": "Fuji",
+      "RaceID": 28,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 435,
+      "ShipName": "Hermes",
+      "RaceID": 28,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 436,
+      "ShipName": "Myrmidon",
+      "RaceID": 28,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 437,
+      "ShipName": "Nemesis",
+      "RaceID": 28,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 438,
+      "ShipName": "Nova",
+      "RaceID": 28,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 496,
+      "ShipName": "Shial",
+      "RaceID": 29,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 497,
+      "ShipName": "Flyer",
+      "RaceID": 29,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 4,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 439,
+      "ShipName": "Nova SD",
+      "RaceID": 28,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 440,
+      "ShipName": "Shadowbolt",
+      "RaceID": 28,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 3,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 441,
+      "ShipName": "Shadow Star",
+      "RaceID": 28,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 442,
+      "ShipName": "Total Victory",
+      "RaceID": 28,
+      "ShipLevel": 6,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 443,
+      "ShipName": "Vengenace",
+      "RaceID": 28,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 444,
+      "ShipName": "Warlock",
+      "RaceID": 28,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 445,
+      "ShipName": "Ashinta",
+      "RaceID": 9,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 446,
+      "ShipName": "Battle Flyer",
+      "RaceID": 9,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 447,
+      "ShipName": "Ishara",
+      "RaceID": 9,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 448,
+      "ShipName": "Leshath",
+      "RaceID": 9,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 449,
+      "ShipName": "Neshatan",
+      "RaceID": 9,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 450,
+      "ShipName": "Nial",
+      "RaceID": 9,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 451,
+      "ShipName": "Hyperion (Assault)",
+      "RaceID": 28,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 452,
+      "ShipName": "Thunderbolt Starfury",
+      "RaceID": 28,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 4,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 453,
+      "ShipName": "Shakrlis",
+      "RaceID": 9,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 454,
+      "ShipName": "Shantavi",
+      "RaceID": 9,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 455,
+      "ShipName": "Sharlin",
+      "RaceID": 9,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 456,
+      "ShipName": "Sukarin",
+      "RaceID": 9,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 457,
+      "ShipName": "Tarath",
+      "RaceID": 9,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 458,
+      "ShipName": "Tarash",
+      "RaceID": 9,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 459,
+      "ShipName": "Tigara",
+      "RaceID": 9,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 460,
+      "ShipName": "Teshlan",
+      "RaceID": 9,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 461,
+      "ShipName": "Tinashi",
+      "RaceID": 9,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 462,
+      "ShipName": "Tishat",
+      "RaceID": 9,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 463,
+      "ShipName": "Torotha",
+      "RaceID": 9,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 464,
+      "ShipName": "Veshatan",
+      "RaceID": 9,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 465,
+      "ShipName": "Invader",
+      "RaceID": 11,
+      "ShipLevel": 3,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 466,
+      "ShipName": "Infilitrator",
+      "RaceID": 11,
+      "ShipLevel": 2,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 467,
+      "ShipName": "Mindflyer",
+      "RaceID": 11,
+      "ShipLevel": 4,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 468,
+      "ShipName": "Brood",
+      "RaceID": 11,
+      "ShipLevel": 5,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 469,
+      "ShipName": "Scout",
+      "RaceID": 11,
+      "ShipLevel": 3,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 470,
+      "ShipName": "Ship (Young)",
+      "RaceID": 11,
+      "ShipLevel": 5,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 471,
+      "ShipName": "Ship (Ancient)",
+      "RaceID": 11,
+      "ShipLevel": 6,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 472,
+      "ShipName": "Spitfire",
+      "RaceID": 11,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 473,
+      "ShipName": "Stalker",
+      "RaceID": 11,
+      "ShipLevel": 4,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 474,
+      "ShipName": "Swiftfire",
+      "RaceID": 11,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 475,
+      "ShipName": "Fighter",
+      "RaceID": 12,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 3,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 476,
+      "ShipName": "Destroyer",
+      "RaceID": 12,
+      "ShipLevel": 4,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 477,
+      "ShipName": "Light Cruiser",
+      "RaceID": 12,
+      "ShipLevel": 5,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 478,
+      "ShipName": "Heavy Cruiser",
+      "RaceID": 12,
+      "ShipLevel": 6,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 479,
+      "ShipName": "Transport",
+      "RaceID": 12,
+      "ShipLevel": 2,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 480,
+      "ShipName": "Carrier",
+      "RaceID": 12,
+      "ShipLevel": 5,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 481,
+      "ShipName": "Seeker",
+      "RaceID": 12,
+      "ShipLevel": 4,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 482,
+      "ShipName": "Striker",
+      "RaceID": 12,
+      "ShipLevel": 3,
+      "SheetType": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 483,
+      "ShipName": "Aurora Starfury",
+      "RaceID": 24,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 4,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 484,
+      "ShipName": "Black Omega Starfury",
+      "RaceID": 24,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 485,
+      "ShipName": "Fighter Carrier",
+      "RaceID": 24,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 486,
+      "ShipName": "Olympus",
+      "RaceID": 24,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 487,
+      "ShipName": "Olympus Gunship",
+      "RaceID": 24,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 488,
+      "ShipName": "Hyperion",
+      "RaceID": 24,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 489,
+      "ShipName": "Nova",
+      "RaceID": 24,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 490,
+      "ShipName": "Mothership",
+      "RaceID": 24,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 491,
+      "ShipName": "Omega",
+      "RaceID": 24,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 492,
+      "ShipName": "Damocles",
+      "RaceID": 24,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 493,
+      "ShipName": "Hecate",
+      "RaceID": 24,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 494,
+      "ShipName": "Kilimanjaro",
+      "RaceID": 24,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 495,
+      "ShipName": "Nial",
+      "RaceID": 29,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 498,
+      "ShipName": "Nolo'Tar",
+      "RaceID": 29,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 499,
+      "ShipName": "Leshath",
+      "RaceID": 29,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 500,
+      "ShipName": "Tara'Lin",
+      "RaceID": 29,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 501,
+      "ShipName": "Ishara",
+      "RaceID": 29,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 502,
+      "ShipName": "Kishara",
+      "RaceID": 29,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 503,
+      "ShipName": "Latara",
+      "RaceID": 29,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 504,
+      "ShipName": "Haven (2)",
+      "RaceID": 14,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 505,
+      "ShipName": "Rutarian",
+      "RaceID": 14,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 2,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 506,
+      "ShipName": "Kutai",
+      "RaceID": 14,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 507,
+      "ShipName": "Sentri",
+      "RaceID": 14,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 4,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 508,
+      "ShipName": "Razik",
+      "RaceID": 14,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 4,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 509,
+      "ShipName": "Amar",
+      "RaceID": 14,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 510,
+      "ShipName": "Darkner",
+      "RaceID": 14,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 511,
+      "ShipName": "Morgrath",
+      "RaceID": 14,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 512,
+      "ShipName": "Corvan",
+      "RaceID": 14,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 513,
+      "ShipName": "Maximus",
+      "RaceID": 14,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 514,
+      "ShipName": "Vorchan",
+      "RaceID": 14,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 515,
+      "ShipName": "Maximus SD",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 516,
+      "ShipName": "Altarian",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 517,
+      "ShipName": "Balvarin",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 518,
+      "ShipName": "Elutarian",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 519,
+      "ShipName": "Magnus",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 520,
+      "ShipName": "Sulust",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 521,
+      "ShipName": "Dargan",
+      "RaceID": 14,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 522,
+      "ShipName": "Liati",
+      "RaceID": 14,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 523,
+      "ShipName": "Primus",
+      "RaceID": 14,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 524,
+      "ShipName": "Secundus",
+      "RaceID": 14,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 525,
+      "ShipName": "Octurion",
+      "RaceID": 14,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 526,
+      "ShipName": "Balvrix",
+      "RaceID": 14,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 527,
+      "ShipName": "Adira",
+      "RaceID": 14,
+      "ShipLevel": 6,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 545,
+      "ShipName": "Dag'Kar",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 528,
+      "ShipName": "Cari",
+      "RaceID": 14,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 529,
+      "ShipName": "Leonidas",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 530,
+      "ShipName": "Lions Lair",
+      "RaceID": 14,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 531,
+      "ShipName": "Virlisi",
+      "RaceID": 14,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 532,
+      "ShipName": "D'Tarn Escort",
+      "RaceID": 8,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 533,
+      "ShipName": "Frazi",
+      "RaceID": 8,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 5,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 534,
+      "ShipName": "Gorith",
+      "RaceID": 8,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 5,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 535,
+      "ShipName": "Sho'Kos (2)",
+      "RaceID": 8,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 536,
+      "ShipName": "Sho'Kov (2)",
+      "RaceID": 8,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 537,
+      "ShipName": "To'Reth",
+      "RaceID": 8,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 3,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 538,
+      "ShipName": "Ka'Tan",
+      "RaceID": 8,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 539,
+      "ShipName": "Ka'Toc",
+      "RaceID": 8,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 540,
+      "ShipName": "Rongoth",
+      "RaceID": 8,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 541,
+      "ShipName": "Rothan",
+      "RaceID": 8,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 542,
+      "ShipName": "Sho'Kar",
+      "RaceID": 8,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 543,
+      "ShipName": "T'Rakk",
+      "RaceID": 8,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 544,
+      "ShipName": "Thentus",
+      "RaceID": 8,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 546,
+      "ShipName": "G'Karith",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 547,
+      "ShipName": "G'Sten",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 548,
+      "ShipName": "T'Loth",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 549,
+      "ShipName": "T'Rann",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 550,
+      "ShipName": "T'Voth",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 551,
+      "ShipName": "Var'Nic",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 552,
+      "ShipName": "G'Lan",
+      "RaceID": 8,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 553,
+      "ShipName": "G'Quan",
+      "RaceID": 8,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 554,
+      "ShipName": "G'Tal",
+      "RaceID": 8,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 555,
+      "ShipName": "X324",
+      "RaceID": 8,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 556,
+      "ShipName": "T'Voth",
+      "RaceID": 8,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 557,
+      "ShipName": "Bin'Tak",
+      "RaceID": 8,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 558,
+      "ShipName": "G'Quanth",
+      "RaceID": 8,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 559,
+      "ShipName": "G'Vrahn",
+      "RaceID": 8,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 560,
+      "ShipName": "Ka'Bin'Tak",
+      "RaceID": 8,
+      "ShipLevel": 6,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 561,
+      "ShipName": "Dag'Tar",
+      "RaceID": 8,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 562,
+      "ShipName": "Has'ra",
+      "RaceID": 1,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 6,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 563,
+      "ShipName": "Kotha",
+      "RaceID": 1,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 6,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 564,
+      "ShipName": "Bisaria",
+      "RaceID": 1,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 565,
+      "ShipName": "Shyarie",
+      "RaceID": 1,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 566,
+      "ShipName": "Tiraca",
+      "RaceID": 1,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 567,
+      "ShipName": "Birarca",
+      "RaceID": 1,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 568,
+      "ShipName": "Fetula",
+      "RaceID": 1,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 569,
+      "ShipName": "Marata",
+      "RaceID": 1,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 570,
+      "ShipName": "Milani",
+      "RaceID": 1,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 571,
+      "ShipName": "Shirasa",
+      "RaceID": 1,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 633,
+      "ShipName": "Ria'stor",
+      "RaceID": 4,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 572,
+      "ShipName": "Thyarie",
+      "RaceID": 1,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 573,
+      "ShipName": "Bimith",
+      "RaceID": 1,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 574,
+      "ShipName": "Lakara",
+      "RaceID": 1,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 575,
+      "ShipName": "Juyaca",
+      "RaceID": 1,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 576,
+      "ShipName": "Brivoki",
+      "RaceID": 1,
+      "ShipLevel": 6,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 577,
+      "ShipName": "Masuma",
+      "RaceID": 1,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 578,
+      "ShipName": "Milaie",
+      "RaceID": 1,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 579,
+      "ShipName": "Sulith",
+      "RaceID": 1,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 580,
+      "ShipName": "Falkosi",
+      "RaceID": 2,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 6,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 581,
+      "ShipName": "Pikatos",
+      "RaceID": 2,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 5,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 582,
+      "ShipName": "Riva",
+      "RaceID": 2,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 3,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 583,
+      "ShipName": "Brikorta",
+      "RaceID": 2,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 584,
+      "ShipName": "Ikorta",
+      "RaceID": 2,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 585,
+      "ShipName": "Shakara",
+      "RaceID": 2,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 586,
+      "ShipName": "Batrado",
+      "RaceID": 2,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 587,
+      "ShipName": "Brokados",
+      "RaceID": 2,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 588,
+      "ShipName": "Halik",
+      "RaceID": 2,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 589,
+      "ShipName": "Haltona",
+      "RaceID": 2,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 590,
+      "ShipName": "Iltarin",
+      "RaceID": 2,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 591,
+      "ShipName": "Avioki",
+      "RaceID": 2,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 592,
+      "ShipName": "Ekalta",
+      "RaceID": 2,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 593,
+      "ShipName": "Kabrokta",
+      "RaceID": 2,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 594,
+      "ShipName": "Kaliva",
+      "RaceID": 2,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 595,
+      "ShipName": "Sukario",
+      "RaceID": 2,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 596,
+      "ShipName": "Cidikar",
+      "RaceID": 2,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 597,
+      "ShipName": "Corumai",
+      "RaceID": 2,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 598,
+      "ShipName": "Takata",
+      "RaceID": 2,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 599,
+      "ShipName": "Tashkat",
+      "RaceID": 2,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 600,
+      "ShipName": "Brivoki",
+      "RaceID": 2,
+      "ShipLevel": 6,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 601,
+      "ShipName": "Claweagle (2)",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 602,
+      "ShipName": "Eyehawk",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 603,
+      "ShipName": "Sky Serpent",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 3,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 604,
+      "ShipName": "Sleekbird",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 605,
+      "ShipName": "Star Snake",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 3,
+      "PerWing": 6,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 606,
+      "ShipName": "Sunhawk",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 607,
+      "ShipName": "Darkhawk",
+      "RaceID": 3,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 608,
+      "ShipName": "Guardhawk",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 609,
+      "ShipName": "Jumphawk",
+      "RaceID": 3,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 610,
+      "ShipName": "Solarhawk",
+      "RaceID": 3,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 611,
+      "ShipName": "Strikehawk",
+      "RaceID": 3,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 612,
+      "ShipName": "Warbird",
+      "RaceID": 3,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 613,
+      "ShipName": "Firehawk",
+      "RaceID": 3,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 614,
+      "ShipName": "Nightfalcon",
+      "RaceID": 3,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 615,
+      "ShipName": "Stormfalcon",
+      "RaceID": 3,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 616,
+      "ShipName": "Blackhawk",
+      "RaceID": 3,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 617,
+      "ShipName": "Darkhawk TC",
+      "RaceID": 3,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 618,
+      "ShipName": "Dusk Hawk",
+      "RaceID": 3,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 619,
+      "ShipName": "Dusk Falcon",
+      "RaceID": 3,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 620,
+      "ShipName": "Preyhawk CF",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 621,
+      "ShipName": "Preyhawk EA",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 622,
+      "ShipName": "Preyhawk Narn",
+      "RaceID": 3,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 623,
+      "ShipName": "Raptor",
+      "RaceID": 3,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 624,
+      "ShipName": "Murunka",
+      "RaceID": 27,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 625,
+      "ShipName": "Dur'shi",
+      "RaceID": 21,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 626,
+      "ShipName": "Resh'Kas'U",
+      "RaceID": 21,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 627,
+      "ShipName": "Thar'not'ak",
+      "RaceID": 21,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 628,
+      "ShipName": "Xaa'l",
+      "RaceID": 13,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 629,
+      "ShipName": "Blockade Runner",
+      "RaceID": 25,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 630,
+      "ShipName": "Omega",
+      "RaceID": 25,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 632,
+      "ShipName": "Kama're",
+      "RaceID": 4,
+      "ShipLevel": 1,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 634,
+      "ShipName": "Sa'ria'stor",
+      "RaceID": 4,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 635,
+      "ShipName": "Shal'da",
+      "RaceID": 4,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 636,
+      "ShipName": "Ria'stor Gris",
+      "RaceID": 4,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 637,
+      "ShipName": "Sa'dravash",
+      "RaceID": 4,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 638,
+      "ShipName": "Ma'cu",
+      "RaceID": 4,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 639,
+      "ShipName": "Ria'vash",
+      "RaceID": 4,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 640,
+      "ShipName": "Temple",
+      "RaceID": 4,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 641,
+      "ShipName": "Dra'Vash",
+      "RaceID": 4,
+      "ShipLevel": 5,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 642,
+      "ShipName": "Amu",
+      "RaceID": 4,
+      "ShipLevel": 6,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 643,
+      "ShipName": "Atas'dara",
+      "RaceID": 4,
+      "ShipLevel": 2,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 644,
+      "ShipName": "La'cu",
+      "RaceID": 4,
+      "ShipLevel": 4,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    },
+    {
+      "ShipID": 645,
+      "ShipName": "Tus'da",
+      "RaceID": 4,
+      "ShipLevel": 3,
+      "SheetType": 1,
+      "Source": "Darkness Rising"
+    }
+  ]
+}

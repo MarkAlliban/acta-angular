@@ -1,0 +1,94 @@
+.ship-data-sheet {
+  margin: auto;
+  margin-top: 3rem;
+  width: 95%;
+  max-width: 640px;
+  font-family: 'Babylon5', Arial, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+
+  > * {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    &:nth-child(2n) {
+      border-right: 1px solid black;
+    }
+  }
+  &__header {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .copyright {
+    grid-column: span 2;
+    border: 1px solid black;
+    background-color: white;
+  }
+}
+
+.fighter-main-table,
+.ship-main-table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  color: #000;
+  font-family: 'Babylon5', Arial, sans-serif;
+  font-size: 7pt;
+  margin: 7px auto;
+  page-break-inside: avoid;
+  position: relative;
+  width: 95%;
+  max-width: 640px;
+}
+
+.fighter-main-table .grey,
+.ship-main-table .grey {
+  background-color: #ddd;
+}
+.fighter-main-table .heading,
+.ship-main-table .heading {
+  font-size: 12pt;
+  text-align: center;
+}
+
+.fighter-main-table .subheading,
+.ship-main-table .subheading {
+  height: 12px;
+  text-align: center;
+}
+.fighter-main-table > tbody > tr > td,
+.ship-main-table > tbody > tr > td {
+  border: 1px solid #000;
+}
+
+.ship-col-1 {
+  min-width: 50%;
+}
+.ship-col-2 {
+  width: 40px;
+}
+.ship-col-3 {
+  width: 20px;
+}
+
+.ship-info-table {
+  border: 0;
+  border-collapse: collapse;
+  font-size: 8pt;
+  vertical-align: top;
+  width: 100%;
+  .trait-box {
+    border: 1px solid #000;
+    height: 11px;
+    width: 11px;
+  }
+}
+
+.boxes-cell {
+  background-color: #aaa;
+  padding: 0;
+}
+
+.critical-hits-box {
+  min-height: 120px;
+}

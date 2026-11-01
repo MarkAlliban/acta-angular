@@ -1,0 +1,13 @@
+<h2>{{ source() }}</h2>
+@if (isFirstSource()) {
+  <div class="levels">
+    @for (level of levels; track level.levelId) {
+      @if (level.name !== 'Ancient') {
+        <div>{{ level.name }}</div>
+      }
+    }
+  </div>
+}
+@for (race of races(); track race.raceId) {
+  <app-ship-race [race]="race" [ships]="ships().filter((ship) => ship.raceId === race.raceId)" />
+}

@@ -1,0 +1,5 @@
+@if (ship()) {
+  <app-ship-data-sheet [ship]="ship()!" />
+} @else {
+  <app-kosh message="`Ship not found`" />
+}

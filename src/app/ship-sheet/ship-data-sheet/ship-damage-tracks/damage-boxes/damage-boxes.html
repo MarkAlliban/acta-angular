@@ -1,0 +1,5 @@
+<div class="damage-boxes-container">
+  @for (i of [].constructor(boxes()); track $index) {
+    <div [style.backgroundColor]="$index >= boxes() - colored() ? color() : ''"></div>
+  }
+</div>

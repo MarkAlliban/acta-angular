@@ -1,0 +1,20 @@
+@use '../../../variables.scss';
+
+.levels {
+  display: none;
+}
+
+@media #{variables.$media-query-md} {
+  .levels {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .levels > * {
+    text-align: center;
+    font-weight: bold;
+    background-color: #eee;
+  }
+  .levels > *:nth-child(2n) {
+    background-color: #ddd;
+  }
+}

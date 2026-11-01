@@ -1,0 +1,15 @@
+@use '../../../variables.scss';
+
+.level {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+	font-size: 0.85rem;
+}
+
+@media #{variables.$media-query-md} {
+  .mobile-level-name {
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+.ship-data-sheet__speed {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 12px 1fr;
+  &-boxes {
+    min-height: 21px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr 1fr);
+    &.single {
+      grid-template-columns: 1fr 1fr;
+    }
+    &.one-box {
+      grid-template-columns: 1fr;
+    }
+    > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}

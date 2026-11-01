@@ -1,0 +1,41 @@
+.ship-damage-tracks {
+	height: 100%;
+  display: flex;
+  flex-direction: column;
+  .subheading {
+    border-bottom: 1px solid black;
+  }
+  .per-ship-text {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    &.single {
+      grid-template-columns: 1fr 1fr;
+    }
+    &.one-box {
+      grid-template-columns: 1fr;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid black;
+    }
+    > * {
+      text-align: center;
+      &:not(:last-child) {
+        border-right: 1px solid black;
+      }
+    }
+  }
+  .per-ship-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid black;
+    background-color: #aaa;
+    > * {
+      &:not(:last-child) {
+        border-right: 1px solid black;
+      }
+    }
+  }
+	> *:last-child {
+		flex-grow: 1;
+	}
+}

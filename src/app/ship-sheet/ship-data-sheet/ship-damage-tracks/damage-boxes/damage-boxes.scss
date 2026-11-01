@@ -1,0 +1,11 @@
+.damage-boxes-container {
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  div {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: white;
+    height: 8px;
+  }
+}

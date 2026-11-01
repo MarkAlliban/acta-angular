@@ -1,0 +1,20 @@
+<div class="ship-list">
+  @if (edition()) {
+    @for (source of sources(); track source) {
+      @if ($index === 0 || showSupplemental()) {
+        <app-ship-source
+          [source]="source === edition()?.edition ? edition()?.name || source : source"
+          [isFirstSource]="$index === 0"
+          [ships]="ships.filter((ship) => ship.source === source)"
+        />
+      }
+    }
+    @if (!showSupplemental()) {
+      <div class="supplemental-button-container">
+        <button (click)="showSupplemental.set(true)">Show supplemental ships</button>
+      </div>
+    }
+  } @else {
+    <app-kosh [message]="`Invalid edition: ${editionName() || 'please choose an edition'}`" />
+  }
+</div>

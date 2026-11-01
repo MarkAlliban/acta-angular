@@ -1,0 +1,57 @@
+<div class="ship-damage-tracks">
+  @if (shields()) {
+    <div class="subheading">Shields</div>
+    <div
+      [class]="`per-ship-text${numberOfShips() === 1 ? ' single' : ''}${isSpaceStation() || isAncient() ? ' one-box' : ''}`"
+      [style]="{ minHeight: '80px' }"
+    >
+      @for (n of [].constructor(numberOfShips()); track $index) {
+        <div class="damage-text">{{ shields() }}</div>
+      }
+    </div>
+  }
+  <div class="subheading">Hull damage</div>
+  @if (isSpaceStation() || selfRepair()) {
+    <div
+      [class]="`per-ship-text${numberOfShips() === 1 ? ' single' : ''}${isSpaceStation() || isAncient() ? ' one-box' : ''}`"
+      [style]="{ minHeight: '120px' }"
+    >
+      @for (n of [].constructor(numberOfShips()); track $index) {
+        <div class="damage-text">
+          {{ ship().damage }} {{ ship().crippled ? ` / ${ship().crippled}` : null
+          }}{{ isSpaceStation() && ship().crew ? ` / ${ship().crew}` : null }}
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="per-ship-boxes">
+      @for (n of [].constructor(numberOfShips()); track $index) {
+        <app-damage-boxes
+          [boxes]="ship().damage"
+          [colored]="ship().crippled"
+          [color]="$index % 2 === 0 ? race().color1 : race().color2"
+        />
+      }
+    </div>
+  }
+  @if (!isSpaceStation() && hasCrew()) {
+    <div class="subheading">Crew casualties</div>
+    <div class="per-ship-boxes">
+      @for (n of [].constructor(numberOfShips()); track $index) {
+        <app-damage-boxes
+          [boxes]="ship().crew"
+          [colored]="ship().skeletoned"
+          [color]="$index % 2 === 0 ? race().color1 : race().color2"
+        />
+      }
+    </div>
+  }
+  @if (!isSpaceStation()) {
+    <div class="subheading">Critical hits</div>
+    <div class="per-ship-text" [style]="{ minHeight: '100px' }">
+      @for (n of [].constructor(numberOfShips()); track $index) {
+        <div class="damage-text"></div>
+      }
+    </div>
+  }
+</div>

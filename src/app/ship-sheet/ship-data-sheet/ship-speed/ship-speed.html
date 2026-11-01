@@ -1,0 +1,27 @@
+<div class="ship-data-sheet__speed">
+  <div class="subheading">
+    @if (isSpaceStation()) {
+      Troops
+    } @else if (isAncient()) {
+      Speed
+    } @else {
+      Speed / Troops
+    }
+  </div>
+  <div
+    [class]="`ship-data-sheet__speed-boxes${numberOfShips() === 1 ? ' single' : ''}${isSpaceStation() || isAncient() ? ' one-box' : ''}`"
+  >
+    @for (n of [].constructor(numberOfShips()); track $index) {
+      @if (!isSpaceStation()) {
+        <div>
+          {{ speed() }}
+        </div>
+      }
+      @if (!isAncient()) {
+        <div>
+          {{ troops() }}
+        </div>
+      }
+    }
+  </div>
+</div>

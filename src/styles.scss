@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Babylon5';
+  src: url('/fonts/Serpentine-Bold-Bold.woff');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scrollbar-gutter: stable;
+}
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+h2 {
+  font-family: 'Babylon5';
+  font-size: 2.5rem;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Babylon5';
+  font-size: 1.5rem;
+  margin: 0.25rem 0;
+  text-align: center;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #00f;
+  text-decoration: none;
+  transition: color 200ms;
+}
+a.ship-type-3 {
+  color: #b90;
+}
+a.ship-type-4 {
+  color: #090;
+}
+a:hover,
+a.ship-type-3:hover,
+a.ship-type-4:hover {
+  color: #f00;
+}
+
+button {
+  background-color: #8af;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 200ms;
+  &:hover {
+    background-color: #acf;
+  }
+}
+
+.subheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+  font-size: 9.5px;
+  background-color: #ddd;
+}

@@ -1,0 +1,50 @@
+<div class="craft-table">
+  <div>Craft</div>
+  <div class="swappable-container">
+    @for (craft of assignedCraft(); track craft.name) {
+      @if (craft.assignedNumber > 0) {
+        <button
+          [class.swappable]="!!hugeHangars() || craft.swapOut || craft.swapIn"
+          (click)="openSwappableCraft(!swappableCraftOpen())"
+        >
+          {{ craft.name }} ({{ craft.assignedNumber }})
+        </button>
+      }
+    }
+    @if (!assignedCraft().some((c) => c.assignedNumber > 0)) {
+      <button class="swappable" (click)="openSwappableCraft(!swappableCraftOpen())">No craft assigned</button>
+    }
+  </div>
+</div>
+@if (swappableCraftOpen()) {
+  <div class="swappable-popup">
+    <div class="swappable-popup__title">
+      @if (craftTotal() === craftAssigned()) {
+        All craft assigned
+      } @else {
+        <span [style]="{ color: 'red' }"
+          >Craft left to assign: {{ craftTotal() - craftAssigned() }}</span
+        >
+      }
+    </div>
+    @for (craft of assignedCraft(); track craft.id) {
+      @if (craft.swapIn || craft.swapOut) {
+        <div class="swappable-popup__row">
+          <div>{{ craft.name }}{{ hugeHangars() ? ` (${craft.price})` : null }}</div>
+          <div>
+            <input
+              type="number"
+              [value]="craft.assignedNumber || 0"
+              [attr.data-id]="craft.id"
+              (input)="changeCraft($event)"
+            />
+          </div>
+        </div>
+      }
+    }
+    <div>
+      <button type="button" (click)="openSwappableCraft(false)">Close</button>
+      <button type="button" (click)="setSwappableCraft()">Reset</button>
+    </div>
+  </div>
+}

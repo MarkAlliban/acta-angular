@@ -1,0 +1,30 @@
+@use '../../../variables.scss';
+
+.race {
+  display: grid;
+}
+.race > * {
+  background-color: #eee;
+  padding: 0.2rem 0;
+}
+.race > *:nth-child(2n) {
+  background-color: #ddd;
+}
+.ancient-race__inner {
+  background-color: #fc8;
+}
+
+@media #{variables.$media-query-md} {
+  .race {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .ancient-race {
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    &__inner {
+      width: 33.3%;
+      background-color: #fc8;
+    }
+  }
+}
