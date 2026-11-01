@@ -1,7 +1,13 @@
 import { Component, computed, ElementRef, input, signal } from '@angular/core';
-import { Fighters, Ship } from '../../../../data/pp/types';
+import { Race, RaceFighters, Ship } from '../../../../data/pp/types';
+import { races } from '../../../../data/pp/races';
+import { ships } from '../../../../data/pp/ships-list';
 
-type SwappableFighter = Fighters & { originalNumber: number; assignedNumber: number };
+type SwappableFighter = RaceFighters & {
+  name: string;
+  originalNumber: number;
+  assignedNumber: number;
+};
 
 @Component({
   imports: [],
@@ -11,6 +17,7 @@ type SwappableFighter = Fighters & { originalNumber: number; assignedNumber: num
 })
 export class CraftSwappable {
   ship = input.required<Ship>();
+  race = input.required<Race>();
   swappableCraftOpen = signal(false);
   assignedCraft = signal<SwappableFighter[]>([]);
 
@@ -80,25 +87,29 @@ export class CraftSwappable {
     if (!canChange) {
       craft.assignedNumber = oldNumber;
       target.value = oldNumber.toString();
+    } else {
+      this.assignedCraft.set([...this.assignedCraft()]);
     }
-    this.assignedCraft.set(this.assignedCraft());
   };
 
   setSwappableCraft = () => {
-    const newCraft: SwappableFighter[] = this.ship().allFighters?.map((fighter) => {
-      return { ...fighter, originalNumber: 0, assignedNumber: 0 };
-    }) || [];
+    const newCraft: SwappableFighter[] =
+      this.race()
+        .fighters.filter((f) => !this.hugeHangars() || (f.price || 1) <= this.hugeHangars())
+        .map((f) => {
+          const fighter = ships.find((ship) => ship.id === f.id);
+          return { ...f, name: fighter?.name || '', originalNumber: 0, assignedNumber: 0 };
+        }) || [];
     this.ship().craft?.forEach((craft) => {
-      const craftToUpdate = newCraft.find((c) => c.name === craft.name);
+      const craftToUpdate = newCraft.find((c) => c.id === craft.id);
       if (craftToUpdate) {
         craftToUpdate.originalNumber = craft.number;
         craftToUpdate.assignedNumber = craft.number;
       } else {
         newCraft.push({
           id: 0,
-					name: '',
+          name: '',
           ...craft,
-          source: this.ship().source,
           assignedNumber: craft.number,
           originalNumber: craft.number,
         });

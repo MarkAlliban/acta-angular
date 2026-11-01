@@ -1,10 +1,11 @@
 import { Component, computed, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Fighters, Ship, Weapons } from '../../../data/pp/types';
+import { Race, Ship, Weapons } from '../../../data/pp/types';
 import { SHEET_TYPE } from '../../../constants';
 import { getISDString } from '../../../utils';
 import { ShipWeapons } from './ship-weapons/ship-weapons';
 import { CraftSwappable } from './craft-swappable/craft-swappable';
+import { ships } from '../../../data/pp/ship-data';
 
 @Component({
   imports: [ShipWeapons, CraftSwappable, FormsModule],
@@ -14,16 +15,23 @@ import { CraftSwappable } from './craft-swappable/craft-swappable';
 })
 export class ShipDataPanel {
   ship = input.required<Ship>();
+  race = input.required<Race>();
   numberOfShips = input.required<number>();
+	fighter = input<boolean>();
 
   isFighter = computed(() => this.ship().type === SHEET_TYPE.fighter);
   isdString = computed(() => getISDString(this.ship().isdFrom, this.ship().isdTo));
-  craftSwappable = computed(() =>
-    this.ship().allFighters?.reduce((a: number, c: Fighters) => {
-      const craft = this.ship().craft?.find((craft) => craft.name === c.name);
-      return a + (c.swapOut ? c.price || craft?.number || 0 : 0);
-    }, 0),
+  craft = computed(() =>
+    this.ship().craft?.map((craft) => {
+      if (craft.name) return craft;
+      const f = ships.find((ship) => ship.id === craft.id);
+      return { name: f?.name, number: craft.number };
+    }),
+  );
+  canSwapCraft = computed(
+    () =>
+      this.ship().traits.some((trait) => trait.toLowerCase().startsWith('huge hangars')) ||
+      this.ship().craft?.some((c) => this.race().fighters.some((f) => f.id === c.id && f.swapOut)),
   );
   weaponArcs = computed(() => Object.keys(this.ship().weapons) as (keyof Weapons)[]);
-  numWeapons = computed(() => Object.keys(this.ship().weapons).length);
 }

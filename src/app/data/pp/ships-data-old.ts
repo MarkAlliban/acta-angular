@@ -1,5 +1,5 @@
 import { Ship } from './types';
-
+/*
 export const ships: Ship[] = [
   {
     id: 1,
@@ -27773,3 +27773,4 @@ export const ships: Ship[] = [
     allFighters: [{ id: 101, name: 'Fighter', source: 'P&P' }],
   },
 ];
+*/

@@ -1,0 +1,21 @@
+.fighter-data-sheet {
+  width: 310px;
+	margin: auto;
+  font-family: 'Babylon5', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+	> * {
+		border: 1px solid black;
+		&:not(:last-child) {
+			border-bottom: none;
+		}
+	}
+  &__header {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+		padding: 0.2rem;
+  }
+}

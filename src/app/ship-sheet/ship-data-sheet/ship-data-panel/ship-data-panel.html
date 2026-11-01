@@ -11,12 +11,12 @@
     <div [innerHTML]="ship().turns || '-'"></div>
   }
   @if (!isFighter() && ship().craft) {
-    @if (craftSwappable()) {
-      <app-craft-swappable [ship]="ship()" />
+    @if (canSwapCraft()) {
+      <app-craft-swappable [ship]="ship()" [race]="race()" />
     } @else {
       <div>Craft</div>
       <div>
-        @for (craft of ship().craft; track craft.name) {
+        @for (craft of craft(); track craft.name) {
           <div>{{ craft.name }} ({{ craft.number }})</div>
         }
       </div>
@@ -28,7 +28,7 @@
       @for (trait of ship().traits; track trait) {
         <div class="ship-info-table__trait">
           <div [style]="{ marginRight: 'auto' }" [innerHTML]="trait"></div>
-          @if (!trait.toLowerCase().startsWith('<i>')) {
+          @if (!fighter() && !trait.toLowerCase().startsWith('<i>')) {
             @for (n of [].constructor(numberOfShips()); track $index) {
               <div [class]="`ship-info-table__trait__trait-box ${n > 0 ? 'nomobile' : ''}`"></div>
             }
@@ -38,19 +38,19 @@
     </div>
   }
 </section>
-<section class="ship-weapons-table">
-  <div class="ship-weapons-table__row subheading">
-    <div>Weapon name</div>
-    <div>Range</div>
-    <div>AD</div>
-    <div>Special</div>
-  </div>
-  @if (numWeapons() > 0) {
+@if (weaponArcs().length > 0) {
+  <section class="ship-weapons-table">
+    <div class="ship-weapons-table__row subheading">
+      <div>Weapon name</div>
+      <div>Range</div>
+      <div>AD</div>
+      <div>Special</div>
+    </div>
     @for (arc of weaponArcs(); track arc) {
       <app-ship-weapons [arc]="arc" [weapons]="ship().weapons[arc]!" />
     }
-  }
-</section>
+  </section>
+}
 @if (ship().notes) {
   <section class="ship-notes" [innerHTML]="ship().notes"></section>
 }

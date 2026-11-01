@@ -23,12 +23,9 @@ export class ShipDataSheet {
     levels.find((level) => level.levelId === this.ship().levelId),
   );
 
-  isFighter = computed(() => this.ship().type === SHEET_TYPE.fighter);
   isAncient = computed(() => this.race()?.name === 'Ancients');
   isSpaceStation = computed(() => this.ship().type === SHEET_TYPE.station);
-  numberOfShips = computed(() =>
-    this.isFighter() ? 0 : this.isAncient() || this.isSpaceStation() ? 1 : 4,
-  );
+  numberOfShips = computed(() => (this.isAncient() || this.isSpaceStation() ? 1 : 4));
 
   removeFromFleet = signal(true);
 }

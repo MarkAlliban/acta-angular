@@ -1,0 +1,7 @@
+<div class="fighter-data-sheet">
+  <div class="fighter-data-sheet__header">{{ race()?.name }} - {{ level()?.name }}</div>
+  <div class="fighter-data-sheet__header">
+    {{ ship().name }}
+  </div>
+  <app-ship-data-panel [ship]="ship()" [race]="race()!" [numberOfShips]="1" [fighter]="true" />
+</div>

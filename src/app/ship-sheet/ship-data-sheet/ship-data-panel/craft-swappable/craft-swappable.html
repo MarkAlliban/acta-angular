@@ -12,7 +12,9 @@
       }
     }
     @if (!assignedCraft().some((c) => c.assignedNumber > 0)) {
-      <button class="swappable" (click)="openSwappableCraft(!swappableCraftOpen())">No craft assigned</button>
+      <button class="swappable" (click)="openSwappableCraft(!swappableCraftOpen())">
+        No craft assigned
+      </button>
     }
   </div>
 </div>
@@ -30,7 +32,7 @@
     @for (craft of assignedCraft(); track craft.id) {
       @if (craft.swapIn || craft.swapOut) {
         <div class="swappable-popup__row">
-          <div>{{ craft.name }}{{ hugeHangars() ? ` (${craft.price})` : null }}</div>
+          <div>{{ craft.name }}{{ hugeHangars() ? ` (${craft.price || 1})` : null }}</div>
           <div>
             <input
               type="number"

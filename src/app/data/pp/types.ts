@@ -79,5 +79,4 @@ export type Ship = {
   shortName: string;
   source: string;
   weapons: Weapons;
-  allFighters?: Fighters[];
 };

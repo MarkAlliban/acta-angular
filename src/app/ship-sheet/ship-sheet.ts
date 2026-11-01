@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { editions } from '../data/editions';
 import { ships } from '../data/pp/ship-data';
 import { ShipDataSheet } from './ship-data-sheet/ship-data-sheet';
+import { FighterDataSheet } from './ship-data-sheet/fighter-data-sheet';
 import { Kosh } from '../kosh/kosh';
-import { races } from '../data/pp/races';
+import { SHEET_TYPE } from '../constants';
 
 @Component({
-  imports: [ShipDataSheet, Kosh],
+  imports: [ShipDataSheet, FighterDataSheet, Kosh],
   selector: 'app-ship-sheet',
   styleUrl: './ship-sheet.scss',
   templateUrl: './ship-sheet.html',
@@ -25,6 +26,7 @@ export class ShipSheet {
     ),
   );
   ship = computed(() => ships.find((ship) => ship.id === this.shipId()));
+	isFighter = computed(() => this.ship()?.type === SHEET_TYPE.fighter);
 
   constructor() {
     const paramsSubscription = this.activatedRoute.queryParams.subscribe((params) => {
@@ -33,11 +35,5 @@ export class ShipSheet {
     });
 
     this.destroyRef.onDestroy(() => paramsSubscription.unsubscribe());
-
-		const fighterStrings:string[] = [];
-    ships.forEach((ship) => {
-			const race = races.find(race => race.raceId === ship.raceId)!;
-			const newShip = {...ship};
-    });
   }
 }
