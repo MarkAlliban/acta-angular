@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Weapon, Weapons } from '../../../../data/pp/types';
+import { Weapon, Weapons } from '../../../../data/types';
 
 @Component({
   imports: [],

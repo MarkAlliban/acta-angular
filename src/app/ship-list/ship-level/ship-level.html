@@ -1,11 +1,17 @@
 <div class="level">
-  <p class="mobile-level-name">
-    <b>{{ level().name }}</b>
-  </p>
-  @for (ship of shipsSorted(); track ship.id) {
+  @if (ships().length) {
+    <p class="mobile-level-name">
+      <b>{{ level().name }}</b>
+    </p>
+  }
+  @for (ship of ships(); track ship.id) {
     <p>
       <a
-        [href]="`/ship?edition=${edition()?.abbreviation}&ShipID=${ship.id}`"
+        routerLink="/ship"
+        [queryParams]="{
+          edition: edition()?.id,
+          ShipID: isFighter(ship) ? allFighters() : ship.id,
+        }"
         [class]="`ship-type-${ship.type}`"
         >{{ ship.name }}{{ isFighter(ship) ? ` (${ship.numberPerWing})` : null }}</a
       >

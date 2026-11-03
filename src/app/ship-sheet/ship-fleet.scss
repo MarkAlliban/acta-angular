@@ -1,0 +1,21 @@
+.ship-selector {
+  background: #ede8d3;
+  padding: 1rem;
+  border-radius: 1rem;
+  flex-direction: column;
+  align-items: center;
+	margin-bottom: 1rem;
+  .selectors-container {
+    width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+    select {
+      border: 0;
+      margin: 0 0.25rem;
+      padding: 0.25rem;
+    }
+  }
+  button {
+    padding: 0.25rem 2rem;
+  }
+}

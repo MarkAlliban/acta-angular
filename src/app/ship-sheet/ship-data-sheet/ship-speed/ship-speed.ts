@@ -12,4 +12,5 @@ export class ShipSpeed {
   troops = input.required<string>();
 	isSpaceStation = input.required<boolean>();
 	isAncient = input.required<boolean>();
+	isOldRace = input.required<boolean>();
 }

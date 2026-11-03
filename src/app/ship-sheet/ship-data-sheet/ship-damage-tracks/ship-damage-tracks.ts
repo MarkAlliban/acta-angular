@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { Race, Ship } from '../../../data/pp/types';
+import { Race, Ship } from '../../../data/types';
 import { DamageBoxes } from './damage-boxes/damage-boxes';
 
 @Component({

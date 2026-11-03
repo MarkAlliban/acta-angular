@@ -1,9 +1,17 @@
-@if (ship()) {
-  @if (isFighter()) {
-    <app-fighter-data-sheet [ship]="ship()!" />
-  } @else {
-    <app-ship-data-sheet [ship]="ship()!" />
-  }
+@if (!edition()) {
+  <app-kosh
+    [message]="`Invalid edition: ${shipService.editionName() || 'please choose an edition'}`"
+  />
+} @else if (!shipArray().length) {
+  <app-kosh message="Ship not found" />
 } @else {
-  <app-kosh message="`Ship not found`" />
+  <div class="ship-container">
+    @for (ship of shipArray(); track ship!.id) {
+      @if (isFighter(ship!)) {
+        <app-fighter-data-sheet [ship]="ship!" [showDelete]="false" />
+      } @else {
+        <app-ship-data-sheet [ship]="ship!" [showDelete]="false" />
+      }
+    }
+  </div>
 }

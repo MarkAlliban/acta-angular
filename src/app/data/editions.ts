@@ -1,15 +1,39 @@
 export type Edition = {
-  edition: string;
+  id: string;
   name: string;
-  abbreviation: string;
-  path: string;
+  shortName: string;
+  fleetKey: string;
 };
 
 export const editions: Edition[] = [
   {
-    edition: 'P&P',
+    id: 'pp',
     name: 'Powers & Principalities',
-    abbreviation: 'PP',
-    path: 'pp',
+    shortName: 'P&P',
+    fleetKey: 'Fleet-PP',
+  },
+  {
+    id: '2e',
+    name: 'Second Edition',
+    shortName: '2e',
+    fleetKey: 'Fleet-2e',
+  },
+  {
+    id: 'ar',
+    name: 'Armageddon',
+    shortName: 'Ar',
+    fleetKey: 'Fleet-AR',
+  },
+  {
+    id: 'dr',
+    name: 'Darkness Rising',
+    shortName: 'DR',
+    fleetKey: 'Fleet-DR',
+  },
+  {
+    id: 'dw',
+    name: 'Dilgar War',
+    shortName: 'DW',
+    fleetKey: 'Fleet-DW',
   },
 ];

@@ -1,7 +1,26 @@
-<h2>{{ source() }}</h2>
+<h2>{{ sourceName() }}</h2>
 @if (isFirstSource()) {
+  <div class="printing-instructions">
+    <h4 class="important">Important instructions</h4>
+    <p>
+      If your sheets print in black and white and don't display the damage tracks correctly, you
+      need to enable background colour printing.
+    </p>
+    <p>
+      <b>Chrome:</b> When you select "Print", click "More settings" on the right. Tick the box
+      "Background graphics".
+    </p>
+    <p>
+      <b>Edge:</b> When you select "Print", click "More settings" on the left. Tick the box
+      "Background graphics".
+    </p>
+    <p>
+      <b>Firefox:</b> When you select "Print", the settings on the right has an option "Print
+      backgrounds" at the bottom. Tick it.
+    </p>
+  </div>
   <div class="levels">
-    @for (level of levels; track level.levelId) {
+    @for (level of levels(); track level.levelId) {
       @if (level.name !== 'Ancient') {
         <div>{{ level.name }}</div>
       }
@@ -9,5 +28,5 @@
   </div>
 }
 @for (race of races(); track race.raceId) {
-  <app-ship-race [race]="race" [ships]="ships().filter((ship) => ship.raceId === race.raceId)" />
+  <app-ship-race [source]="source()" [race]="race" />
 }

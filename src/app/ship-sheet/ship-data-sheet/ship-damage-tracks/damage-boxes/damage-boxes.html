@@ -1,5 +1,24 @@
-<div class="damage-boxes-container">
-  @for (i of [].constructor(boxes()); track $index) {
-    <div [style.backgroundColor]="$index >= boxes() - colored() ? color() : ''"></div>
-  }
-</div>
+<table class="damage-boxes-container">
+  <colgroup>
+    @for (row of [].constructor(10); track $index) {
+      <col [style]="{ width: '10%'}" />
+    }
+  </colgroup>
+  <tbody>
+    @for (row of [].constructor(rows()); track $index; let rowIndex = $index) {
+      <tr>
+        @for (
+          col of [].constructor($index === rows() - 1 ? lastRow() : 10);
+          track $index;
+          let colIndex = $index
+        ) {
+          <td
+            [style]="
+              boxes() - rowIndex * 10 - colIndex <= colored() ? { backgroundColor: color() } : {}
+            "
+          ></td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>

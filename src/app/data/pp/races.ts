@@ -1,4 +1,4 @@
-import { Race } from './types';
+import { Race } from '../types';
 
 export const races: Race[] = [
   {
@@ -50,14 +50,14 @@ export const races: Race[] = [
     color1: '#ff8000',
     color2: '#ffa060',
     fighters: [
-      { id: 311, swapOut: true, swapIn: true },
-      { id: 310, swapOut: true, swapIn: true },
-      { id: 309, swapOut: true, swapIn: true },
-      { id: 308, swapIn: true, price: 2 },
-      { id: 305, swapIn: true, price: 2 },
-      { id: 346, swapIn: true, price: 2 },
-      { id: 307, swapIn: true, price: 8 },
-      { id: 306, swapIn: true, price: 8 },
+      { id: 266, swapOut: true, swapIn: true },
+      { id: 268, swapOut: true, swapIn: true },
+      { id: 272, swapOut: true, swapIn: true },
+      { id: 269, swapIn: true, price: 2 },
+      { id: 271, swapIn: true, price: 2 },
+      { id: 265, swapIn: true, price: 2 },
+      { id: 270, swapIn: true, price: 8 },
+      { id: 264, swapIn: true, price: 8 },
       { id: 273 },
     ],
   },

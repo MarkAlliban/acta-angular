@@ -1,5 +1,10 @@
 <div class="fighter-data-sheet">
-  <div class="fighter-data-sheet__header">{{ race()?.name }} - {{ level()?.name }}</div>
+  <div class="fighter-data-sheet__header">
+    @if (showDelete()) {
+      <button class="ship-close" (click)="removeFromFleet()"></button>
+    }
+    <p [style]="{ margin: 'auto' }">{{ race()?.name }} - {{ level()?.name }}</p>
+  </div>
   <div class="fighter-data-sheet__header">
     {{ ship().name }}
   </div>

@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Race, Ship, Weapons } from '../../../data/pp/types';
+import { Race, Ship, Weapons } from '../../../data/types';
 import { SHEET_TYPE } from '../../../constants';
 import { getISDString } from '../../../utils';
 import { ShipWeapons } from './ship-weapons/ship-weapons';

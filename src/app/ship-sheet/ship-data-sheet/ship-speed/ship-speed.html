@@ -2,14 +2,14 @@
   <div class="subheading">
     @if (isSpaceStation()) {
       Troops
-    } @else if (isAncient()) {
+    } @else if (isAncient() || isOldRace()) {
       Speed
     } @else {
       Speed / Troops
     }
   </div>
   <div
-    [class]="`ship-data-sheet__speed-boxes${numberOfShips() === 1 ? ' single' : ''}${isSpaceStation() || isAncient() ? ' one-box' : ''}`"
+    [class]="`ship-data-sheet__speed-boxes${numberOfShips() === 1 ? ' single' : ''}${isSpaceStation() || isAncient() || isOldRace() ? ' one-box' : ''}`"
   >
     @for (n of [].constructor(numberOfShips()); track $index) {
       @if (!isSpaceStation()) {
@@ -17,7 +17,7 @@
           {{ speed() }}
         </div>
       }
-      @if (!isAncient()) {
+      @if (!isAncient() && !isOldRace()) {
         <div>
           {{ troops() }}
         </div>

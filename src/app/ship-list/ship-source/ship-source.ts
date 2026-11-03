@@ -1,8 +1,8 @@
-import { Component, computed, input } from '@angular/core';
-import { MenuShip } from '../../data/pp/types';
-import { races } from '../../data/pp/races';
+import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
+
+import { ShipService } from '../../ship.service';
+import { Race } from '../../data/types';
 import { ShipRace } from '../ship-race/ship-race';
-import { levels } from '../../data/pp/levels';
 
 @Component({
   imports: [ShipRace],
@@ -10,20 +10,16 @@ import { levels } from '../../data/pp/levels';
   styleUrl: './ship-source.scss',
   templateUrl: './ship-source.html',
 })
-export class ShipSource {
+export class ShipSource implements OnInit {
+  shipService = inject(ShipService);
+
   source = input.required<string>();
+  sourceName = computed(() => this.shipService.sourceName(this.source()));
   isFirstSource = input.required<boolean>();
-  levels = levels;
-  ships = input.required<MenuShip[]>();
-  races = computed(() =>
-    [
-      ...new Set(
-        this.ships().map((ship) => races.find((race) => race.raceId === ship.raceId) || races[0]),
-      ),
-    ].sort((a, b) => {
-      if (a.name === 'Ancients') return 1;
-      if (b.name === 'Ancients') return -1;
-      return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;
-    }),
-  );
+  levels = this.shipService.levels;
+  races = signal<Race[]>([]);
+
+  ngOnInit() {
+    this.races.set(this.shipService.racesInSource(this.source()));
+  }
 }

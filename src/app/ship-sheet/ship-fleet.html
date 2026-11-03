@@ -1,0 +1,41 @@
+@if (!edition()) {
+  <app-kosh
+    [message]="`Invalid edition: ${shipService.editionName() || 'please choose an edition'}`"
+  />
+} @else if (!shipService.races()?.length) {
+  <app-kosh [message]="`No ships found for edition: ${shipService.edition().name}`" />
+} @else {
+  <div class="ship-container ship-selector">
+    <p><b>Add to fleet</b></p>
+    <div class="selectors-container">
+      <select [(ngModel)]="selectedRace" (ngModelChange)="selectedShip.set('')">
+        <option value="">Choose a race...</option>
+        @for (race of shipService.races(); track race.raceId) {
+          <option [value]="race.raceId">{{ race.name }}</option>
+        }
+      </select>
+      <select [style]="selectedRace() ? {} : { visibility: 'hidden' }" [(ngModel)]="selectedShip">
+        <option value="">Choose a ship...</option>
+        @for (ship of filteredShips(); track ship.id) {
+          <option [value]="ship.id">
+            {{ shipService.getShipAndLevel(ship.name, ship.levelId) }}
+          </option>
+        }
+      </select>
+    </div>
+    <button [disabled]="!selectedShip()" (click)="addSelectedShip()">Add</button>
+  </div>
+  @if (!shipIdArray().length) {
+    <div class="ship-container no-ships"><b>Your fleet is empty</b></div>
+  } @else {
+    <div class="ship-container">
+      @for (ship of shipArray(); track ship!.id) {
+        @if (isFighter(ship!)) {
+          <app-fighter-data-sheet [ship]="ship!" [showDelete]="true" />
+        } @else {
+          <app-ship-data-sheet [ship]="ship!" [showDelete]="true" />
+        }
+      }
+    </div>
+  }
+}

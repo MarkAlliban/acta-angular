@@ -1,5 +1,7 @@
+@use '../../../../variables.scss';
+
 .ship-damage-tracks {
-	height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   .subheading {
@@ -7,13 +9,7 @@
   }
   .per-ship-text {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    &.single {
-      grid-template-columns: 1fr 1fr;
-    }
-    &.one-box {
-      grid-template-columns: 1fr;
-    }
+    grid-template-columns: 1fr;
     &:not(:last-child) {
       border-bottom: 1px solid black;
     }
@@ -22,20 +18,39 @@
       &:not(:last-child) {
         border-right: 1px solid black;
       }
+      &:not(:last-child) {
+        display: none;
+      }
     }
   }
   .per-ship-boxes {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     border-bottom: 1px solid black;
     background-color: #aaa;
     > * {
       &:not(:last-child) {
         border-right: 1px solid black;
+        display: none;
       }
     }
   }
-	> *:last-child {
-		flex-grow: 1;
-	}
+  > *:last-child {
+    flex-grow: 1;
+  }
+}
+
+@media #{variables.$media-query-md} {
+  .ship-damage-tracks {
+    .per-ship-text,
+    .per-ship-boxes {
+      &:not(.single) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      > *:not(:last-child) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 }

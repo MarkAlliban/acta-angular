@@ -27,8 +27,8 @@
     <div class="per-ship-boxes">
       @for (n of [].constructor(numberOfShips()); track $index) {
         <app-damage-boxes
-          [boxes]="ship().damage"
-          [colored]="ship().crippled"
+          [boxes]="ship().damage || 0"
+          [colored]="ship().crippled || 0"
           [color]="$index % 2 === 0 ? race().color1 : race().color2"
         />
       }
@@ -39,8 +39,8 @@
     <div class="per-ship-boxes">
       @for (n of [].constructor(numberOfShips()); track $index) {
         <app-damage-boxes
-          [boxes]="ship().crew"
-          [colored]="ship().skeletoned"
+          [boxes]="ship().crew || 0"
+          [colored]="ship().skeletoned || 0"
           [color]="$index % 2 === 0 ? race().color1 : race().color2"
         />
       }

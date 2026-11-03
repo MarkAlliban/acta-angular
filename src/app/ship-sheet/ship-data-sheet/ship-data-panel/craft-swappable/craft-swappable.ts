@@ -1,7 +1,6 @@
-import { Component, computed, ElementRef, input, signal } from '@angular/core';
-import { Race, RaceFighters, Ship } from '../../../../data/pp/types';
-import { races } from '../../../../data/pp/races';
-import { ships } from '../../../../data/pp/ships-list';
+import { Component, computed, ElementRef, input, OnInit, signal } from '@angular/core';
+import { Race, RaceFighters, Ship } from '../../../../data/types';
+import { ships } from '../../../../data/pp/ship-data';
 
 type SwappableFighter = RaceFighters & {
   name: string;
@@ -15,7 +14,7 @@ type SwappableFighter = RaceFighters & {
   styleUrl: './craft-swappable.scss',
   templateUrl: './craft-swappable.html',
 })
-export class CraftSwappable {
+export class CraftSwappable implements OnInit {
   ship = input.required<Ship>();
   race = input.required<Race>();
   swappableCraftOpen = signal(false);
@@ -103,15 +102,15 @@ export class CraftSwappable {
     this.ship().craft?.forEach((craft) => {
       const craftToUpdate = newCraft.find((c) => c.id === craft.id);
       if (craftToUpdate) {
-        craftToUpdate.originalNumber = craft.number;
-        craftToUpdate.assignedNumber = craft.number;
+        craftToUpdate.originalNumber = craft.number || 0;
+        craftToUpdate.assignedNumber = craft.number || 0;
       } else {
         newCraft.push({
           id: 0,
           name: '',
           ...craft,
-          assignedNumber: craft.number,
-          originalNumber: craft.number,
+          assignedNumber: craft.number || 0,
+          originalNumber: craft.number || 0,
         });
       }
     });

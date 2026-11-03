@@ -1,7 +1,7 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
 
 import { SHEET_TYPE } from '../../constants';
-import { Level, Race, Ship } from '../../data/pp/types';
+import { Level, Race, Ship } from '../../data/types';
 import { races } from '../../data/pp/races';
 import { levels } from '../../data/pp/levels';
 
@@ -9,6 +9,7 @@ import { ShipName } from './ship-name/ship-name';
 import { ShipSpeed } from './ship-speed/ship-speed';
 import { ShipDataPanel } from './ship-data-panel/ship-data-panel';
 import { ShipDamageTracks } from './ship-damage-tracks/ship-damage-tracks';
+import { ShipService } from '../../ship.service';
 
 @Component({
   imports: [ShipName, ShipSpeed, ShipDataPanel, ShipDamageTracks],
@@ -17,7 +18,9 @@ import { ShipDamageTracks } from './ship-damage-tracks/ship-damage-tracks';
   templateUrl: './ship-data-sheet.html',
 })
 export class ShipDataSheet {
+  shipService = inject(ShipService);
   ship = input.required<Ship>();
+	showDelete = input.required<boolean>();
   race = computed<Race | undefined>(() => races.find((race) => race.raceId === this.ship().raceId));
   level = computed<Level | undefined>(() =>
     levels.find((level) => level.levelId === this.ship().levelId),
@@ -25,7 +28,10 @@ export class ShipDataSheet {
 
   isAncient = computed(() => this.race()?.name === 'Ancients');
   isSpaceStation = computed(() => this.ship().type === SHEET_TYPE.station);
+  isOldRace = computed(() => this.ship().type === SHEET_TYPE.oldRace);
   numberOfShips = computed(() => (this.isAncient() || this.isSpaceStation() ? 1 : 4));
 
-  removeFromFleet = signal(true);
+  removeFromFleet = () => {
+    this.shipService.removeShipFromFleet(this.ship().id);
+  };
 }

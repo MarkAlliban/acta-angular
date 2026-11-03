@@ -18,13 +18,11 @@ export type Race = {
   fighters: RaceFighters[];
 };
 
-type WeaponTrait = string;
-
 export type Weapon = {
   name: string;
   range: number;
   ad?: number;
-  traits?: WeaponTrait[];
+  traits?: string[];
 };
 
 export type Weapons = {
@@ -57,6 +55,16 @@ export type MenuShip = {
 };
 
 export type Ship = {
+	// RaceName?: string;
+	// LevelName?: string;
+	// DamageValue?: string;
+	// Crippled?: string;
+	// CrewValue?: string;
+	// Skeletoned?: string;
+	// CrippledColour1?: string;
+	// CrippledColour2?: string;
+	// AllFighters?: any;
+
   id: number;
   name: string;
   raceId: number;

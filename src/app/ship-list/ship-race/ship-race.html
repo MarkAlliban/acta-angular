@@ -2,17 +2,14 @@
 @if (race().name === 'Ancients') {
   <div class="ancient-race">
     <div class="ancient-race__inner">
-      <app-ship-level [level]="ancientLevel" [ships]="ships()" />
+      <app-ship-level [source]="source()" [race]="race()" [level]="ancientLevel" />
     </div>
   </div>
 } @else {
   <div class="race">
-    @for (level of levels; track level.levelId) {
+    @for (level of levels(); track level.levelId) {
       @if (level.name !== 'Ancient' && race().name !== 'Ancients') {
-        <app-ship-level
-          [level]="level"
-          [ships]="ships().filter((ship) => ship.levelId === level.levelId)"
-        />
+        <app-ship-level [source]="source()" [race]="race()" [level]="level" />
       }
     }
   </div>

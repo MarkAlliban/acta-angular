@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
-import { Race, MenuShip } from '../../data/pp/types';
-import { levels } from '../../data/pp/levels';
+import { Component, inject, input } from '@angular/core';
+
+import { ShipService } from '../../ship.service';
+import { Race } from '../../data/types';
 import { ShipLevel } from '../ship-level/ship-level';
 
 @Component({
@@ -10,8 +11,11 @@ import { ShipLevel } from '../ship-level/ship-level';
   templateUrl: './ship-race.html',
 })
 export class ShipRace {
+  shipService = inject(ShipService);
+
+  source = input.required<string>();
   race = input.required<Race>();
-  ships = input.required<MenuShip[]>();
-  levels = levels;
-	ancientLevel = levels.at(-1)!;
+  levels = this.shipService.levels;
+
+  ancientLevel = this.levels()?.at(-1)!;
 }

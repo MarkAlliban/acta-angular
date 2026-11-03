@@ -1,39 +1,30 @@
-import { Component, computed, DestroyRef, inject, input, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Level, MenuShip } from '../../data/pp/types';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
+
+import { ShipService } from '../../ship.service';
+import { Level, MenuShip, Race } from '../../data/types';
 import { SHEET_TYPE } from '../../constants';
-import { editions } from '../../data/editions';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-ship-level',
   styleUrl: './ship-level.scss',
   templateUrl: './ship-level.html',
 })
-export class ShipLevel {
-  private readonly activatedRoute = inject(ActivatedRoute);
-  private readonly destroyRef = inject(DestroyRef);
-  editionName = signal<string>('');
+export class ShipLevel implements OnInit {
+  shipService = inject(ShipService);
+
+  edition = this.shipService.edition;
+  source = input.required<string>();
+  race = input.required<Race>();
   level = input.required<Level>();
-  ships = input.required<MenuShip[]>();
+  ships = signal<MenuShip[]>([]);
+  allFighters = signal('');
 
-  edition = computed(() =>
-    editions.find(
-      (edition) => edition.abbreviation.toLowerCase() === this.editionName().toLowerCase(),
-    ),
-  );
-
-  shipsSorted = computed(() => {
-    return this.ships().sort((a, b) => (a.name > b.name ? 1 : -1));
-  });
+  ngOnInit() {
+    this.ships.set(this.shipService.shipsInLevel(this.source(), this.race(), this.level()) || []);
+    this.allFighters.set(this.shipService.getFighters(this.source(), this.race().raceId));
+  }
 
   isFighter = (ship: MenuShip) => ship.type === SHEET_TYPE.fighter;
-
-  constructor() {
-    const editionSubscrption = this.activatedRoute.queryParams.subscribe((params) => {
-      this.editionName.set(params['edition'] || '');
-    });
-
-    this.destroyRef.onDestroy(() => editionSubscrption.unsubscribe());
-  }
 }

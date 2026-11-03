@@ -1,12 +1,12 @@
 import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { editions } from '../data/editions';
-import { ships } from '../data/pp/ship-data';
+import { ShipService } from '../ship.service';
+import { Ship } from '../data/types';
+import { SHEET_TYPE } from '../constants';
+import { Kosh } from '../kosh/kosh';
 import { ShipDataSheet } from './ship-data-sheet/ship-data-sheet';
 import { FighterDataSheet } from './ship-data-sheet/fighter-data-sheet';
-import { Kosh } from '../kosh/kosh';
-import { SHEET_TYPE } from '../constants';
 
 @Component({
   imports: [ShipDataSheet, FighterDataSheet, Kosh],
@@ -17,21 +17,28 @@ import { SHEET_TYPE } from '../constants';
 export class ShipSheet {
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
-  editionName = signal<string>('');
-  shipId = signal<number | null>(null);
+  shipService = inject(ShipService);
 
-  edition = computed(() =>
-    editions.find(
-      (edition) => edition.abbreviation.toLowerCase() === this.editionName().toLowerCase(),
-    ),
+  edition = this.shipService.edition;
+
+  shipIdArray = signal<number[]>([]);
+  shipArray = computed(() =>
+    this.shipIdArray()
+      .map((shipId) => {
+        return this.shipService.getShip(shipId);
+      })
+      .filter(Boolean)
+      .sort((a, b) => (a!.type! < b!.type! ? -1 : 1)),
   );
-  ship = computed(() => ships.find((ship) => ship.id === this.shipId()));
-	isFighter = computed(() => this.ship()?.type === SHEET_TYPE.fighter);
+
+  isFighter = (ship: Ship) => ship.type === SHEET_TYPE.fighter;
 
   constructor() {
     const paramsSubscription = this.activatedRoute.queryParams.subscribe((params) => {
-      this.editionName.set(params['edition'] || '');
-      this.shipId.set(+params['ShipID'] || null);
+      const shipIDs = params['ShipID'];
+      this.shipIdArray.set(
+        shipIDs?.split(',').map((shipId: string) => Number.parseInt(shipId)) || [],
+      );
     });
 
     this.destroyRef.onDestroy(() => paramsSubscription.unsubscribe());

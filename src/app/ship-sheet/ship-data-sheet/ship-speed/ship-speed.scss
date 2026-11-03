@@ -1,14 +1,14 @@
+@use '../../../../variables.scss';
+
 .ship-data-sheet__speed {
   height: 100%;
   display: grid;
-  grid-template-rows: 12px 1fr;
+  grid-template-rows: min-content 1fr;
   &-boxes {
     min-height: 21px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr 1fr);
-    &.single {
-      grid-template-columns: 1fr 1fr;
-    }
+    grid-template-columns: 1fr 1fr;
+
     &.one-box {
       grid-template-columns: 1fr;
     }
@@ -21,6 +21,32 @@
       &:last-child {
         border-right: none;
       }
+      &:nth-child(-n + 6) {
+        display: none;
+      }
+    }
+    &.one-box > *:nth-child(-n + 1) {
+      display: flex;
+    }
+    &.single > * {
+      display: flex;
+    }
+  }
+}
+
+@media #{variables.$media-query-md} {
+  .ship-data-sheet__speed-boxes {
+    &:not(.single) {
+      grid-template-columns: repeat(4, 1fr 1fr);
+      &.one-box {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    > *:nth-child(-n + 6) {
+      display: flex;
+    }
+    &.one-box:not(.single) > * {
+      display: flex;
     }
   }
 }

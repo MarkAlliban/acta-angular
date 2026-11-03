@@ -1,7 +1,7 @@
 .ship-list {
   width: 100%;
   box-shadow: 0 0 15px 4px #202040b3;
-  margin: 20px auto;
+  margin: 1rem auto;
 }
 
 .supplemental-button-container {
@@ -15,7 +15,6 @@
   .ship-list {
     box-shadow: 0 0 15px 4px #202040b3;
     margin: 30px auto;
-    margin: 0 auto;
     width: clamp(760px, 80%, 1200px);
   }
 }

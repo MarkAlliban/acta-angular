@@ -1,3 +1,7 @@
+:root {
+  --ship-panel-padding: 3px;
+}
+
 @font-face {
   font-family: 'Babylon5';
   src: url('/fonts/Serpentine-Bold-Bold.woff');
@@ -13,6 +17,7 @@ html {
 }
 body {
   font-family: 'Open Sans', Arial, sans-serif;
+  margin: 0;
 }
 
 h2 {
@@ -57,8 +62,8 @@ button {
   padding: 0.7rem 2rem;
   border-radius: 0.3rem;
   font-size: 1rem;
-	cursor: pointer;
-	transition: background-color 200ms;
+  cursor: pointer;
+  transition: background-color 200ms;
   &:hover {
     background-color: #acf;
   }
@@ -68,7 +73,27 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12px;
+  text-align: center;
+  min-height: 12px;
   font-size: 9.5px;
   background-color: #ddd;
+}
+
+.ship-container {
+  width: min(95%, 640px);
+  margin: 0 auto 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  > app-ship-data-sheet {
+    width: 100%;
+  }
+  > app-fighter-data-sheet {
+    width: calc((100% - 1rem) / 2);
+  }
+  &.no-ships {
+    padding: 1rem;
+    justify-content: center;
+  }
 }

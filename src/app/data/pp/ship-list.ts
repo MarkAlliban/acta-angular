@@ -1,4 +1,4 @@
-import { MenuShip } from './types';
+import { MenuShip } from '../types';
 
 export const ships: MenuShip[] = [
   {
@@ -2343,62 +2343,6 @@ export const ships: MenuShip[] = [
     source: 'P&P',
   },
   {
-    id: 305,
-    name: "Sa'dravash Light Cruiser",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
-    source: 'P&P',
-  },
-  {
-    id: 306,
-    name: "Dra'Vash Cruiser",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
-    source: 'P&P',
-  },
-  {
-    id: 307,
-    name: "Ria'vash Strike Cruiser",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
-    source: 'P&P',
-  },
-  {
-    id: 308,
-    name: "Ria'stor Gris Fast Destroyer",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
-    source: 'P&P',
-  },
-  {
-    id: 309,
-    name: "Sa'ria'stor Light Raider",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
-    source: 'P&P',
-  },
-  {
-    id: 310,
-    name: "Ria'stor Heavy Raider",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
-    source: 'P&P',
-  },
-  {
-    id: 311,
-    name: "Kama're Scout",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
-    source: 'P&P',
-  },
-  {
     id: 312,
     name: 'Space Station',
     raceId: 15,
@@ -2659,14 +2603,6 @@ export const ships: MenuShip[] = [
     raceId: 27,
     levelId: 5,
     type: 1,
-    source: 'P&P',
-  },
-  {
-    id: 346,
-    name: "Kama're Sas Patrol Cruiser",
-    raceId: 4,
-    levelId: 0,
-    type: 3,
     source: 'P&P',
   },
   {

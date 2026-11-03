@@ -1,9 +1,7 @@
 <div class="ship-data-sheet">
   <div class="ship-data-sheet__header">
-    @if (removeFromFleet()) {
-      <button class="ship-close" (click)="removeFromFleet()" [style]="{ marginLeft: '0.2rem' }">
-        x
-      </button>
+    @if (showDelete()) {
+      <button class="ship-close" (click)="removeFromFleet()"></button>
     }
     <p [style]="{ margin: 'auto' }">{{ race()?.name }} - {{ level()?.name }}</p>
   </div>
@@ -17,6 +15,7 @@
     [troops]="ship().troops"
     [isSpaceStation]="isSpaceStation()"
     [isAncient]="isAncient()"
+    [isOldRace]="isOldRace()"
   />
   <app-ship-data-panel [ship]="ship()" [race]="race()!" [numberOfShips]="numberOfShips()" />
   <app-ship-damage-tracks
@@ -24,7 +23,7 @@
     [race]="race()!"
     [numberOfShips]="numberOfShips()"
     [isSpaceStation]="isSpaceStation()"
-		[isAncient]="isAncient()"
+    [isAncient]="isAncient()"
   />
   <div class="copyright subheading">
     All Content Copyright Mongoose Publishing 2009-2026. Reproduced with permission.

@@ -2,7 +2,7 @@
   font-size: 8pt;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 2px;
+  margin: var(--ship-panel-padding) var(--ship-panel-padding) 0.5rem;
   > * {
     margin: 1px;
   }
@@ -23,9 +23,9 @@
 }
 
 .ship-weapons-table {
-  margin: 2px;
-  margin-top: 0.5rem;
+  // margin: 0.5rem var(--ship-panel-padding) var(--ship-panel-padding);
   &__row {
+    padding: 0 var(--ship-panel-padding);
     font-size: 7pt;
     display: grid;
     grid-template-columns: 8fr 2fr 1fr 4fr;
@@ -36,7 +36,6 @@
 }
 
 .ship-notes {
-  margin: 2px;
-  margin-top: 1rem;
+  margin: 0.5rem var(--ship-panel-padding) var(--ship-panel-padding);
   font-size: 7pt;
 }
