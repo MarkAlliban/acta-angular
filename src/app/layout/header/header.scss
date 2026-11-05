@@ -1,0 +1,33 @@
+@use '../../../variables.scss';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.header {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  background: linear-gradient(#c3bc90, #ede8d3);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0 0 10px #000;
+}
+
+.header-spacer {
+  height: 3rem;
+}
+
+@media #{variables.$media-query-md} {
+  .header {
+    width: 640px;
+    padding: 0.2 0;
+  }
+
+  .header-spacer {
+    height: 4rem;
+  }
+}

@@ -2,23 +2,19 @@ import { computed, DestroyRef, effect, inject, Service, signal } from '@angular/
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { editions } from './data/editions';
-import { Level, Race } from './data/types';
+import { Level, MenuShip, Race, Ship } from './data/types';
 import { SHEET_TYPE } from './constants';
 
 import { races as racesPP } from './data/pp/races';
 import { levels as levelsPP } from './data/pp/levels';
-import { ships as shipsPP } from './data/pp/ship-data';
-import { ships as listPP } from './data/pp/ship-list';
-
 import { races as races2e } from './data/2e/races';
 import { levels as levels2e } from './data/2e/levels';
-import { ships as ships2e } from './data/2e/ship-data';
-import { ships as list2e } from './data/2e/ship-list';
-
-import { races as racesArmageddon } from './data/armageddon/races';
-import { levels as levelsArmageddon } from './data/armageddon/levels';
-import { ships as shipsArmageddon } from './data/armageddon/ship-data';
-import { ships as listArmageddon } from './data/armageddon/ship-list';
+import { races as racesAr } from './data/armageddon/races';
+import { levels as levelsAr } from './data/armageddon/levels';
+import { races as racesDW } from './data/dilgar-war/races';
+import { levels as levelsDW } from './data/dilgar-war/levels';
+import { races as racesDR } from './data/darkness-rising/races';
+import { levels as levelsDR } from './data/darkness-rising/levels';
 
 @Service()
 export class ShipService {
@@ -27,30 +23,24 @@ export class ShipService {
   private readonly destroyRef = inject(DestroyRef);
   editionName = signal<string>('');
   fleetShips = signal<number[]>([]);
+  ships = signal<Ship[] | null>(null);
+  list = signal<MenuShip[] | null>(null);
 
   edition = computed(() => editions.find((edition) => edition.id === this.editionName()));
   levels = computed(() => {
     if (this.editionName() === 'pp') return levelsPP;
     if (this.editionName() === '2e') return levels2e;
-    if (this.editionName() === 'ar') return levelsArmageddon;
+    if (this.editionName() === 'ar') return levelsAr;
+    if (this.editionName() === 'dw') return levelsDW;
+    if (this.editionName() === 'dr') return levelsDR;
     return null;
   });
   races = computed(() => {
     if (this.editionName() === 'pp') return racesPP;
     if (this.editionName() === '2e') return races2e;
-    if (this.editionName() === 'ar') return racesArmageddon;
-    return null;
-  });
-  ships = computed(() => {
-    if (this.editionName() === 'pp') return shipsPP;
-    if (this.editionName() === '2e') return ships2e;
-    if (this.editionName() === 'ar') return shipsArmageddon;
-    return null;
-  });
-  list = computed(() => {
-    if (this.editionName() === 'pp') return listPP;
-    if (this.editionName() === '2e') return list2e;
-    if (this.editionName() === 'ar') return listArmageddon;
+    if (this.editionName() === 'ar') return racesAr;
+    if (this.editionName() === 'dw') return racesDW;
+    if (this.editionName() === 'dr') return racesDR;
     return null;
   });
   sources = computed(() =>
@@ -108,20 +98,28 @@ export class ShipService {
 
   addShipToFleet = (shipId: number) => {
     if (!this.edition()) return;
-    const currentShipIDs = new Set(localStorage.getItem(this.edition()!.fleetKey)?.split(',').map(id => +id));
-    if (currentShipIDs.has(shipId)) return;
-    currentShipIDs.add(shipId);
-    localStorage.setItem(this.edition()!.fleetKey, [...currentShipIDs].filter(Boolean).join(','));
-    this.fleetShips.set([...currentShipIDs]);
+    let shipIDs =
+      localStorage
+        .getItem(this.edition()!.fleetKey)
+        ?.split(',')
+				.filter(Boolean)
+        .map((id) => +id) || [];
+    shipIDs.push(shipId);
+    localStorage.setItem(this.edition()!.fleetKey, shipIDs.filter(Boolean).join(','));
+    this.fleetShips.set(shipIDs);
   };
 
   removeShipFromFleet = (shipId: number) => {
     if (!this.edition()) return;
-    const currentShipIDs = new Set(localStorage.getItem(this.edition()!.fleetKey)?.split(',').map(id => +id));
-    if (!currentShipIDs.has(shipId)) return;
-    currentShipIDs.delete(shipId);
-    localStorage.setItem(this.edition()!.fleetKey, [...currentShipIDs].filter(Boolean).join(','));
-    this.fleetShips.set([...currentShipIDs]);
+    const shipIDs =
+      localStorage
+        .getItem(this.edition()!.fleetKey)
+        ?.split(',')
+        .map((id) => +id) || [];
+    const index = shipIDs.findIndex((id) => id === shipId);
+    if (index > -1) shipIDs.splice(index, 1);
+    localStorage.setItem(this.edition()!.fleetKey, shipIDs.join(','));
+    this.fleetShips.set(shipIDs);
   };
 
   removeFromSheet = (shipId: number) => {
@@ -150,8 +148,59 @@ export class ShipService {
           window.localStorage
             .getItem(this.edition()!.fleetKey)
             ?.split(',')
+            .filter(Boolean)
             .map((id) => +id) || [],
         );
+      }
+    });
+
+    effect(() => {
+      this.list.set(null);
+      this.ships.set(null);
+      switch (this.editionName()) {
+        case 'pp':
+          import('./data/pp/ship-list')
+            .then((list) => this.list.set(list.ships))
+            .catch(() => this.list.set([]));
+          import('./data/pp/ship-data')
+            .then((data) => this.ships.set(data.ships))
+            .catch(() => this.ships.set([]));
+          break;
+        case '2e':
+          import('./data/2e/ship-list')
+            .then((list) => this.list.set(list.ships))
+            .catch(() => this.list.set([]));
+          import('./data/2e/ship-data')
+            .then((data) => this.ships.set(data.ships))
+            .catch(() => this.ships.set([]));
+          break;
+        case 'ar':
+          import('./data/armageddon/ship-list')
+            .then((list) => this.list.set(list.ships))
+            .catch(() => this.list.set([]));
+          import('./data/armageddon/ship-data')
+            .then((data) => this.ships.set(data.ships))
+            .catch(() => this.ships.set([]));
+          break;
+        case 'dw':
+          import('./data/dilgar-war/ship-list')
+            .then((list) => this.list.set(list.ships))
+            .catch(() => this.list.set([]));
+          import('./data/dilgar-war/ship-data')
+            .then((data) => this.ships.set(data.ships))
+            .catch(() => this.ships.set([]));
+          break;
+        case 'dr':
+          import('./data/darkness-rising/ship-list')
+            .then((list) => this.list.set(list.ships))
+            .catch(() => this.list.set([]));
+          import('./data/darkness-rising/ship-data')
+            .then((data) => this.ships.set(data.ships))
+            .catch(() => this.ships.set([]));
+          break;
+        default:
+          this.list.set([]);
+          this.ships.set([]);
       }
     });
 

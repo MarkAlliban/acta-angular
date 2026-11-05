@@ -4,6 +4,7 @@
   font-family: 'Babylon5', Arial, sans-serif;
   display: flex;
   flex-direction: column;
+  page-break-inside: avoid;
   > * {
     border: 1px solid black;
     &:not(:last-child) {

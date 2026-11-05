@@ -3,14 +3,4 @@
     text-align: center;
     font-size: 10pt;
   }
-  &__row {
-		padding: 1px var(--ship-panel-padding);
-    font-size: 8pt;
-    display: grid;
-    grid-template-columns: 8fr 2fr 1fr 4fr;
-    font-size: 7pt;
-    *:not(:first-child) {
-      text-align: center;
-    }
-  }
 }

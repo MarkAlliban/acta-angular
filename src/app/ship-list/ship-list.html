@@ -2,16 +2,18 @@
   <app-kosh
     [message]="`Invalid edition: ${shipService.editionName() || 'please choose an edition'}`"
   />
+} @else if (ships() === null) {
+	<div class="ship-container"><app-loading /></div>
 } @else if (!ships()?.length) {
   <app-kosh [message]="`No ships found for edition: ${edition()?.name}`" />
 } @else {
   <div class="ship-list">
-    @for (source of sources(); track source) {
+    @for (source of listSources(); track source) {
       @if ($index === 0 || showSupplemental()) {
         <app-ship-source [source]="source" [isFirstSource]="$index === 0" />
       }
     }
-    @if (!showSupplemental()) {
+    @if (!showSupplemental() && listSources().length > 1) {
       <div class="supplemental-button-container">
         <button (click)="showSupplemental.set(true)">Show supplemental ships</button>
       </div>

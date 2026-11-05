@@ -2,8 +2,6 @@ import { Component, computed, inject, input, signal } from '@angular/core';
 
 import { SHEET_TYPE } from '../../constants';
 import { Level, Race, Ship } from '../../data/types';
-import { races } from '../../data/pp/races';
-import { levels } from '../../data/pp/levels';
 
 import { ShipName } from './ship-name/ship-name';
 import { ShipSpeed } from './ship-speed/ship-speed';
@@ -20,10 +18,12 @@ import { ShipService } from '../../ship.service';
 export class ShipDataSheet {
   shipService = inject(ShipService);
   ship = input.required<Ship>();
-	showDelete = input.required<boolean>();
-  race = computed<Race | undefined>(() => races.find((race) => race.raceId === this.ship().raceId));
+  showDelete = input.required<boolean>();
+  race = computed<Race | undefined>(() =>
+    this.shipService.races()?.find((race) => race.raceId === this.ship().raceId),
+  );
   level = computed<Level | undefined>(() =>
-    levels.find((level) => level.levelId === this.ship().levelId),
+    this.shipService.levels()?.find((level) => level.levelId === this.ship().levelId),
   );
 
   isAncient = computed(() => this.race()?.name === 'Ancients');

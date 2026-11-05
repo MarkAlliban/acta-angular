@@ -8,7 +8,7 @@ export type Edition = {
 export const editions: Edition[] = [
   {
     id: 'pp',
-    name: 'Powers & Principalities',
+    name: 'Powers And Principalities',
     shortName: 'P&P',
     fleetKey: 'Fleet-PP',
   },

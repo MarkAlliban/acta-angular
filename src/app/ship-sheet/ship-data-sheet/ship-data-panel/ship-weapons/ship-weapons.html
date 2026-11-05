@@ -1,9 +1,4 @@
 <div class="ship-weapons-table__arc">{{ arcName[arc()] }}</div>
 @for (weapon of weapons(); track $index) {
-  <div class="ship-weapons-table__row">
-    <div>{{ weapon.name }}</div>
-    <div>{{ weapon.range }}</div>
-    <div>{{ weapon.ad }}</div>
-    <div>{{ weapon.traits?.join('/') }}</div>
-  </div>
+  <app-ship-weapon [weapon]="weapon" [canUseMissileVariants]="canUseMissileVariants(weapon)" />
 }

@@ -1,0 +1,29 @@
+@use '../../../variables.scss';
+
+footer {
+	margin-top: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto 0;
+  padding: 0.5rem 0;
+  background: linear-gradient(#ede8d3, #c3bc90);
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+}
+
+@media #{variables.$media-query-md} {
+  .footer {
+    width: 640px;
+    padding: 0.3rem 0;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+}

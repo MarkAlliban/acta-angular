@@ -2,8 +2,8 @@
   <div class="subheading">Name / Crew Quality</div>
   <div [class]="`ship-data-sheet__name-boxes ${numberOfShips() === 1 ? 'single' : ''}`">
     @for (n of [].constructor(numberOfShips()); track $index) {
-        <div></div>
-        <div></div>
+      <div class="ship-data-sheet__name-name" contenteditable="plaintext-only"></div>
+      <div class="ship-data-sheet__name-cq" contenteditable="plaintext-only"></div>
     }
   </div>
 </div>

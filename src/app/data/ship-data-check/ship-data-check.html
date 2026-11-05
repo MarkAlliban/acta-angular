@@ -1,0 +1,140 @@
+<div class="ship-container" [style]="{ paddingBottom: '1rem', gap: '0.2rem 1rem' }">
+  <p>Switch edition:</p>
+  @for (edition of editions; track edition.id) {
+    <a
+      routerLink="."
+      [queryParams]="{ edition: edition.id }"
+      [class.active]="shipService.edition()?.id === edition.id"
+      >{{ edition.name }}</a
+    >
+  }
+</div>
+<div class="ship-container data-check">
+  <p>
+    <b>Edition: {{ shipService.edition()?.name || 'None' }}</b>
+  </p>
+  <div class="dashboard">
+    <div class="dashboard-item">
+      <p>Ships list:</p>
+      <div>
+        @if (shipService.list() === null) {
+          ...
+        } @else if (shipService.list()!.length === 0) {
+          <p class="error">No ships found!</p>
+        } @else {
+          {{ shipService.list()!.length }}
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Ships data:</p>
+      <div>
+        @if (shipService.ships() === null) {
+          ...
+        } @else if (shipService.ships()!.length === 0) {
+          <p class="error">No ships found!</p>
+        } @else {
+          {{ shipService.ships()!.length }}
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Ships in the list but not in the data:</p>
+      <div>
+        @if (list2() === undefined) {
+          ...
+        } @else if (list2()!.length === 0) {
+          All good
+        } @else {
+          @for (shipId of list2(); track shipId) {
+            <p class="error">{{ shipId }}</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Ships in the data but not in the list:</p>
+      <div>
+        @if (list3() === undefined) {
+          ...
+        } @else if (list3()!.length === 0) {
+          All good
+        } @else {
+          @for (shipId of list3(); track shipId) {
+            <p class="error">{{ shipId }}</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Ships with inconsistent data:</p>
+      <div>
+        @if (list4() === undefined) {
+          ...
+        } @else if (list4()!.length === 0) {
+          All good
+        } @else {
+          @for (ship of list4(); track ship.id) {
+            <p class="error">{{ ship.id }}: {{ ship.shortName }}</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Ships with invalid races:</p>
+      <div>
+        @if (races1() === undefined) {
+          ...
+        } @else if (races1()!.length === 0) {
+          All good
+        } @else {
+          @for (ship of races1(); track ship.id) {
+            <p class="error">{{ ship.id }}: {{ ship.shortName }} ({{ ship.raceId }})</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Races with invalid fighters:</p>
+      <div>
+        @if (fighters1() === undefined) {
+          ...
+        } @else if (fighters1()!.length === 0) {
+          All good
+        } @else {
+          @for (ship of fighters1(); track ship) {
+            <p class="error">{{ ship.name }}</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Ships with with invalid fighters:</p>
+      <div>
+        @if (fighters2() === undefined) {
+          ...
+        } @else if (fighters2()!.length === 0) {
+          All good
+        } @else {
+          @for (ship of fighters2(); track ship) {
+            <p class="error">{{ ship.id }}: {{ ship.name }} ({{ ship.fighter }})</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="dashboard-item">
+      <p>Races with no ships:</p>
+      <div>
+        @if (races2() === undefined) {
+          ...
+        } @else if (races2()!.length === 0) {
+          All good
+        } @else {
+          @for (race of races2(); track race.raceId) {
+            <p class="error">{{ race.raceId }}: {{ race.name }}</p>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</div>

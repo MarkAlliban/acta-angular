@@ -1,0 +1,15 @@
+@if (weaponToShow) {
+  <div class="ship-weapons-table__row">
+    <div>
+      {{ weaponToShow.name }}
+      @if (canUseMissileVariants()) {
+        <button (click)="changeMissileVariant()" class="noprint">
+          <img src="/images/sync.svg" />
+        </button>
+      }
+    </div>
+    <div>{{ weaponToShow.range }}</div>
+    <div>{{ weaponToShow.ad }}</div>
+    <div>{{ weaponToShow.traits?.join('/') }}</div>
+  </div>
+}

@@ -1,6 +1,6 @@
-import { Component, computed, ElementRef, input, OnInit, signal } from '@angular/core';
+import { Component, computed, ElementRef, inject, input, OnInit, signal } from '@angular/core';
 import { Race, RaceFighters, Ship } from '../../../../data/types';
-import { ships } from '../../../../data/pp/ship-data';
+import { ShipService } from '../../../../ship.service';
 
 type SwappableFighter = RaceFighters & {
   name: string;
@@ -15,6 +15,7 @@ type SwappableFighter = RaceFighters & {
   templateUrl: './craft-swappable.html',
 })
 export class CraftSwappable implements OnInit {
+  shipService = inject(ShipService);
   ship = input.required<Ship>();
   race = input.required<Race>();
   swappableCraftOpen = signal(false);
@@ -96,7 +97,7 @@ export class CraftSwappable implements OnInit {
       this.race()
         .fighters.filter((f) => !this.hugeHangars() || (f.price || 1) <= this.hugeHangars())
         .map((f) => {
-          const fighter = ships.find((ship) => ship.id === f.id);
+          const fighter = this.shipService.ships()?.find((ship) => ship.id === f.id);
           return { ...f, name: fighter?.name || '', originalNumber: 0, assignedNumber: 0 };
         }) || [];
     this.ship().craft?.forEach((craft) => {

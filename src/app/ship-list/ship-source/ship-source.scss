@@ -1,15 +1,7 @@
 @use '../../../variables.scss';
 
 .printing-instructions {
-	text-align: center;
-	margin-bottom: 1rem;
-	.important {
-		background-color: red;
-		display: inline-block;
-		margin: 0;
-		padding: 0 1rem;
-		font-size: 1.5rem;
-	}
+  display: none;
 }
 
 .levels {
@@ -17,6 +9,17 @@
 }
 
 @media #{variables.$media-query-md} {
+  .printing-instructions {
+    text-align: center;
+    margin-bottom: 1rem;
+    .important {
+      background-color: red;
+      display: inline-block;
+      margin: 0;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+    }
+  }
   .levels {
     display: grid;
     grid-template-columns: repeat(6, 1fr);

@@ -1,15 +1,15 @@
 import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
 import { ShipService } from '../ship.service';
 import { FormsModule } from '@angular/forms';
-import { ships } from '../data/pp/ship-list';
 import { Ship } from '../data/types';
 import { SHEET_TYPE } from '../constants';
 import { ShipDataSheet } from './ship-data-sheet/ship-data-sheet';
 import { FighterDataSheet } from './ship-data-sheet/fighter-data-sheet';
-import { Kosh } from '../kosh/kosh';
+import { Kosh } from '../shared/kosh/kosh';
+import { Loading } from '../shared/loading/loading';
 
 @Component({
-  imports: [FormsModule, ShipDataSheet, FighterDataSheet, Kosh],
+  imports: [FormsModule, ShipDataSheet, FighterDataSheet, Kosh, Loading],
   selector: 'app-ship-fleet',
   styleUrl: './ship-fleet.scss',
   templateUrl: './ship-fleet.html',
@@ -29,8 +29,9 @@ export class ShipFleet {
 
   selectedRace = signal<string>('');
   filteredShips = computed(() =>
-    ships
-      .filter((ship) => ship.raceId === +this.selectedRace())
+    this.shipService
+      .ships()
+      ?.filter((ship) => ship.raceId === +this.selectedRace())
       .sort((a, b) => {
         return a.name > b.name ? 1 : -1;
       })

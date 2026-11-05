@@ -1,7 +1,5 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { Level, Race, Ship } from '../../data/types';
-import { races } from '../../data/pp/races';
-import { levels } from '../../data/pp/levels';
 
 import { ShipService } from '../../ship.service';
 import { ShipDataPanel } from './ship-data-panel/ship-data-panel';
@@ -15,10 +13,12 @@ import { ShipDataPanel } from './ship-data-panel/ship-data-panel';
 export class FighterDataSheet {
   shipService = inject(ShipService);
   ship = input.required<Ship>();
-	showDelete = input.required<boolean>();
-  race = computed<Race | undefined>(() => races.find((race) => race.raceId === this.ship().raceId));
+  showDelete = input.required<boolean>();
+  race = computed<Race | undefined>(() =>
+    this.shipService.races()?.find((race) => race.raceId === this.ship().raceId),
+  );
   level = computed<Level | undefined>(() =>
-    levels.find((level) => level.levelId === this.ship().levelId),
+    this.shipService.levels()?.find((level) => level.levelId === this.ship().levelId),
   );
 
   removeFromFleet = () => {

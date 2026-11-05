@@ -1,0 +1,20 @@
+a.active {
+  color: red;
+  font-weight: bold;
+  background: #ccc;
+}
+.data-check {
+  flex-direction: column;
+  text-align: center;
+  .dashboard {
+    display: grid;
+    gap: 2rem 4rem;
+    grid-template-columns: 1fr 1fr;
+    .dashboard-item > div {
+      font-weight: bold;
+			.error {
+				color: red;
+			}
+    }
+  }
+}

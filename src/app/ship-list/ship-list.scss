@@ -1,20 +1,20 @@
+@use '../../variables.scss';
+
 .ship-list {
   width: 100%;
   box-shadow: 0 0 15px 4px #202040b3;
-  margin: 1rem auto;
+  margin: auto;
 }
 
 .supplemental-button-container {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
   padding: 1rem 0;
-
 }
 
-@media (min-width: 780px) {
+@media #{variables.$media-query-md} {
   .ship-list {
     box-shadow: 0 0 15px 4px #202040b3;
-    margin: 30px auto;
-    width: clamp(760px, 80%, 1200px);
+    width: min(80%, 1200px);
   }
 }

@@ -1,0 +1,74 @@
+@use '../../variables.scss';
+
+.background {
+  position: fixed;
+  inset: 0;
+  height: 100lvh;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+.home {
+  position: relative;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #eee;
+	text-wrap: balance;
+  z-index: 1;
+	a {
+		color: #ff0;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: currentColor;
+			transform: scaleX(0);
+			transition: transform 200ms;
+		}
+		&:hover::after {
+				transform: none;
+		}
+	}
+
+  .intro {
+    width: min(1100px, 80%);
+    margin: 1rem auto;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+  }
+
+  .glass {
+    -webkit-backdrop-filter: blur(3px) brightness(0.7);
+    backdrop-filter: blur(3px) brightness(0.7);
+    border: 2px solid #0000004d;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+	.editions {
+		width: min(1500px, 95%);
+		margin: 1rem auto;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		.edition {
+			img {
+				border-radius: 0.5rem;
+			}
+
+		}
+	}
+}
+
+@media #{variables.$media-query-md} {
+	.home .editions {
+		grid-template-columns: 1fr 1fr;
+	}
+}

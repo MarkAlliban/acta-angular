@@ -2,6 +2,8 @@
   <app-kosh
     [message]="`Invalid edition: ${shipService.editionName() || 'please choose an edition'}`"
   />
+} @else if (shipService.ships() === null) {
+  <div class="ship-container"><app-loading /></div>
 } @else if (!shipArray().length) {
   <app-kosh message="Ship not found" />
 } @else {
@@ -14,4 +16,15 @@
       }
     }
   </div>
+  @if (shipArray().length === 1) {
+    <div class="ship-container noprint" [style]="{ marginTop: '1rem' }">
+      <button (click)="addToFleet()">
+        @if (shipService.fleetShips().length) {
+          Add to fleet
+        } @else {
+          Start a fleet
+        }
+      </button>
+    </div>
+  }
 }

@@ -25,6 +25,32 @@
       display: flex;
     }
   }
+  &-name,
+  &-cq {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    &:focus-visible {
+      outline: none;
+      &::after {
+        height: 2px;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: 1px;
+      background: red;
+    }
+  }
+  &-name {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 7pt;
+  }
 }
 
 @media #{variables.$media-query-md} {

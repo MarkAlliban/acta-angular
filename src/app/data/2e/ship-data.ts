@@ -100,7 +100,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 102,
@@ -763,7 +762,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 123,
@@ -786,7 +784,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 124,
@@ -809,7 +806,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 125,
@@ -837,7 +833,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 126,
@@ -1393,7 +1388,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 141,
@@ -1421,7 +1415,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 142,
@@ -1444,7 +1437,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 143,
@@ -1472,7 +1464,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 144,
@@ -2033,7 +2024,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 16,
@@ -2097,7 +2087,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 161,
@@ -2120,7 +2109,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 162,
@@ -2148,7 +2136,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 163,
@@ -2176,7 +2163,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 164,
@@ -2758,7 +2744,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 181,
@@ -2781,7 +2766,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 182,
@@ -2804,7 +2788,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 183,
@@ -3437,7 +3420,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 199,
@@ -3460,7 +3442,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 2,
@@ -3560,7 +3541,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 201,
@@ -3583,7 +3563,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 202,
@@ -4400,7 +4379,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 226,
@@ -4428,7 +4406,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 227,
@@ -4451,7 +4428,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 228,
@@ -4474,7 +4450,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 229,
@@ -4497,7 +4472,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 23,
@@ -4555,7 +4529,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 231,
@@ -4579,7 +4552,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 232,
@@ -5073,7 +5045,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 1,
   },
   {
     id: 246,
@@ -5096,7 +5067,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 247,
@@ -5349,7 +5319,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 3,
   },
   {
     id: 254,
@@ -5401,7 +5370,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 256,
@@ -5424,7 +5392,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 8,
   },
   {
     id: 257,
@@ -5447,7 +5414,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 258,
@@ -5475,7 +5441,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 259,
@@ -5979,7 +5944,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 274,
@@ -6632,7 +6596,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 8,
   },
   {
     id: 295,
@@ -7315,7 +7278,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 326,
@@ -7338,7 +7300,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 327,
@@ -7420,7 +7381,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 33,
@@ -7565,7 +7525,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 334,
@@ -7650,7 +7609,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 338,
@@ -7776,7 +7734,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 341,
@@ -7799,7 +7756,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 342,
@@ -8325,7 +8281,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 48,
@@ -8348,7 +8303,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 49,
@@ -8371,7 +8325,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 5,
@@ -8419,7 +8372,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 51,
@@ -8447,7 +8399,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 3,
   },
   {
     id: 52,
@@ -8470,7 +8421,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 53,
@@ -8493,7 +8443,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 54,
@@ -8516,7 +8465,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 55,
@@ -8539,7 +8487,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 56,
@@ -8567,7 +8514,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 57,
@@ -8590,7 +8536,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 2,
   },
   {
     id: 58,
@@ -8613,7 +8558,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 59,
@@ -8636,7 +8580,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 3,
   },
   {
     id: 6,
@@ -9263,7 +9206,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 4,
   },
   {
     id: 8,
@@ -9313,7 +9255,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 6,
   },
   {
     id: 81,
@@ -9341,7 +9282,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 5,
   },
   {
     id: 82,
@@ -9369,7 +9309,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 3,
   },
   {
     id: 83,
@@ -9718,7 +9657,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 3,
   },
   {
     id: 96,
@@ -9741,7 +9679,6 @@ export const ships: Ship[] = [
     crippled: 0,
     crew: 0,
     skeletoned: 0,
-    numberInWing: 3,
   },
   {
     id: 97,

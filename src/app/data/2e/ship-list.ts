@@ -7,7 +7,7 @@ export const ships: MenuShip[] = [
     raceId: 23,
     levelId: 4,
     type: 1,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 235,
@@ -15,7 +15,7 @@ export const ships: MenuShip[] = [
     raceId: 23,
     levelId: 2,
     type: 1,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 236,
@@ -23,7 +23,7 @@ export const ships: MenuShip[] = [
     raceId: 23,
     levelId: 3,
     type: 1,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 237,
@@ -31,7 +31,7 @@ export const ships: MenuShip[] = [
     raceId: 23,
     levelId: 1,
     type: 1,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 238,
@@ -39,7 +39,7 @@ export const ships: MenuShip[] = [
     raceId: 23,
     levelId: 3,
     type: 1,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 239,
@@ -1531,7 +1531,7 @@ export const ships: MenuShip[] = [
     levelId: 1,
     type: 3,
     numberPerWing: 4,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 230,
@@ -1540,7 +1540,7 @@ export const ships: MenuShip[] = [
     levelId: 1,
     type: 3,
     numberPerWing: 6,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 231,
@@ -1549,7 +1549,7 @@ export const ships: MenuShip[] = [
     levelId: 1,
     type: 3,
     numberPerWing: 6,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 232,
@@ -1557,7 +1557,7 @@ export const ships: MenuShip[] = [
     raceId: 23,
     levelId: 2,
     type: 1,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 233,
@@ -1565,7 +1565,7 @@ export const ships: MenuShip[] = [
     raceId: 23,
     levelId: 3,
     type: 1,
-    source: '2e',
+    source: 'Old',
   },
   {
     id: 244,

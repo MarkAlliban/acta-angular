@@ -3,7 +3,9 @@
     [message]="`Invalid edition: ${shipService.editionName() || 'please choose an edition'}`"
   />
 } @else if (!shipService.races()?.length) {
-  <app-kosh [message]="`No ships found for edition: ${shipService.edition().name}`" />
+  <app-kosh [message]="`No ships found for edition: ${shipService.edition()!.name}`" />
+} @else if (shipService.ships() === null) {
+	<div class="ship-container"><app-loading /></div>
 } @else {
   <div class="ship-container ship-selector">
     <p><b>Add to fleet</b></p>

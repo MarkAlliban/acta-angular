@@ -1,0 +1,63 @@
+@keyframes pulse {
+  from {
+    background: black;
+  }
+  to {
+    background: white;
+  }
+}
+.loader {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background-color: white;
+    width: 25%;
+    height: 8%;
+    translate: -50% -50%;
+    border-radius: 1rem;
+    transform: translateX(150%);
+    rotate: calc(360deg / 12 * var(--i));
+    animation: pulse 1s calc(2s + 1s / 12 * var(--i)) infinite;
+    &:nth-child(1) {
+      --i: 1;
+    }
+    &:nth-child(2) {
+      --i: 2;
+    }
+    &:nth-child(3) {
+      --i: 3;
+    }
+    &:nth-child(4) {
+      --i: 4;
+    }
+    &:nth-child(5) {
+      --i: 5;
+    }
+    &:nth-child(6) {
+      --i: 6;
+    }
+    &:nth-child(7) {
+      --i: 7;
+    }
+    &:nth-child(8) {
+      --i: 8;
+    }
+    &:nth-child(9) {
+      --i: 9;
+    }
+    &:nth-child(10) {
+      --i: 10;
+    }
+    &:nth-child(11) {
+      --i: 11;
+    }
+    &:nth-child(12) {
+      --i: 12;
+    }
+  }
+}

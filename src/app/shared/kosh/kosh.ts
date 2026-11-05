@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 
 const koshisms: string[] = [
   'We take no interest in the affairs of others.',
@@ -16,7 +16,11 @@ const koshisms: string[] = [
   styleUrl: './kosh.scss',
   templateUrl: './kosh.html',
 })
-export class Kosh {
+export class Kosh implements OnInit {
   message = input.required<string>();
   koshism = koshisms[Math.floor(Math.random() * koshisms.length)];
+
+  ngOnInit() {
+    console.error('Kosh appears!', this.message());
+  }
 }

@@ -1,21 +1,31 @@
+@use '../../variables.scss';
+
 .ship-selector {
   background: #ede8d3;
   padding: 1rem;
   border-radius: 1rem;
   flex-direction: column;
   align-items: center;
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
   .selectors-container {
     width: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
     select {
       border: 0;
       margin: 0 0.25rem;
       padding: 0.25rem;
+			width: 100%;
     }
   }
   button {
     padding: 0.25rem 2rem;
+  }
+}
+
+@media #{variables.$media-query-md} {
+  .ship-selector .selectors-container {
+    grid-template-columns: 1fr 1fr;
   }
 }

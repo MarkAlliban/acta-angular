@@ -1,3 +1,5 @@
+@use './variables.scss';
+
 :root {
   --ship-panel-padding: 3px;
 }
@@ -14,10 +16,39 @@
 }
 html {
   scrollbar-gutter: stable;
+  height: 100%;
 }
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  > app-root {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  > app-layout {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    > app-footer {
+      margin-top: auto;
+    }
+  }
+}
+
+h1 {
+  font-family: 'Babylon5';
+  font-size: 1.3rem;
+  margin: 0;
+  text-align: center;
 }
 
 h2 {
@@ -81,7 +112,7 @@ button {
 
 .ship-container {
   width: min(95%, 640px);
-  margin: 0 auto 1rem;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -95,5 +126,24 @@ button {
   &.no-ships {
     padding: 1rem;
     justify-content: center;
+  }
+}
+
+@media print {
+  .noprint,
+  .ship-data-sheet__name-name::after,
+  .ship-data-sheet__name-cq::after,
+  .swappable-popup,
+  .ship-selector,
+  .ship-close {
+    display: none !important;
+  }
+  .swappable {
+    text-decoration: none !important;
+  }
+}
+@media #{variables.$media-query-md} {
+  h1 {
+    font-size: 2rem;
   }
 }

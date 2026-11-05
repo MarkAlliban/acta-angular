@@ -1,29 +1,41 @@
+@use '../../../../variables.scss';
+
 .ship-info-table {
   font-size: 8pt;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: var(--ship-panel-padding) var(--ship-panel-padding) 0.5rem;
-  > * {
-    margin: 1px;
-  }
-  &__trait {
-    display: flex;
-    &__trait-box {
-      width: 10px;
-      height: 11px;
-      border: 1px solid black;
-      border-right: none;
-      &:last-child {
-        border-right: 1px solid black;
-        margin-right: 1px;
-        width: 11px;
+  gap: 1px;
+  &__traits {
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+    &-trait {
+      display: flex;
+			align-items: center;
+			& > *:first-child {
+				margin-right: auto;
+			}
+      &__trait-box {
+        flex-shrink: 0;
+        width: 10px;
+        height: 11px;
+        border: 1px solid black;
+        border-right: none;
+				&:not(:last-child) {
+					display: none;
+				}
+        &:last-child {
+          border-right: 1px solid black;
+          margin-right: 1px;
+          width: 11px;
+        }
       }
     }
   }
 }
 
 .ship-weapons-table {
-  // margin: 0.5rem var(--ship-panel-padding) var(--ship-panel-padding);
   &__row {
     padding: 0 var(--ship-panel-padding);
     font-size: 7pt;
@@ -38,4 +50,10 @@
 .ship-notes {
   margin: 0.5rem var(--ship-panel-padding) var(--ship-panel-padding);
   font-size: 7pt;
+}
+
+@media #{variables.$media-query-md} {
+	.ship-info-table__traits-trait__trait-box:not(:last-child) {
+		display: block;
+	}
 }

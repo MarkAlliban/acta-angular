@@ -13,8 +13,8 @@ export type RaceFighters = {
 export type Race = {
   raceId: number;
   name: string;
-  color1?: string;
-  color2?: string;
+  color1: string;
+  color2: string;
   fighters: RaceFighters[];
 };
 
@@ -55,15 +55,15 @@ export type MenuShip = {
 };
 
 export type Ship = {
-	// RaceName?: string;
-	// LevelName?: string;
-	// DamageValue?: string;
-	// Crippled?: string;
-	// CrewValue?: string;
-	// Skeletoned?: string;
-	// CrippledColour1?: string;
-	// CrippledColour2?: string;
-	// AllFighters?: any;
+  // RaceName?: string;
+  // LevelName?: string;
+  // DamageValue?: string;
+  // Crippled?: string;
+  // CrewValue?: string;
+  // Skeletoned?: string;
+  // CrippledColour1?: string;
+  // CrippledColour2?: string;
+  // AllFighters?: any;
 
   id: number;
   name: string;
@@ -76,7 +76,6 @@ export type Ship = {
   hull: string;
   turns: string;
   craft?: { id?: number; name?: string; number: number }[];
-  numberInWing?: number;
   traits: string[];
   damage: number;
   crippled: number;

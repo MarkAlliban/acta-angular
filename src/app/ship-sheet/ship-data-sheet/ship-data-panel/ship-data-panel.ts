@@ -1,11 +1,11 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Race, Ship, Weapons } from '../../../data/types';
 import { SHEET_TYPE } from '../../../constants';
 import { getISDString } from '../../../utils';
 import { ShipWeapons } from './ship-weapons/ship-weapons';
 import { CraftSwappable } from './craft-swappable/craft-swappable';
-import { ships } from '../../../data/pp/ship-data';
+import { ShipService } from '../../../ship.service';
 
 @Component({
   imports: [ShipWeapons, CraftSwappable, FormsModule],
@@ -14,6 +14,7 @@ import { ships } from '../../../data/pp/ship-data';
   templateUrl: './ship-data-panel.html',
 })
 export class ShipDataPanel {
+	shipService = inject(ShipService);
   ship = input.required<Ship>();
   race = input.required<Race>();
   numberOfShips = input.required<number>();
@@ -24,7 +25,7 @@ export class ShipDataPanel {
   craft = computed(() =>
     this.ship().craft?.map((craft) => {
       if (craft.name) return craft;
-      const f = ships.find((ship) => ship.id === craft.id);
+      const f = this.shipService.ships()?.find((ship) => ship.id === craft.id);
       return { name: f?.name, number: craft.number };
     }),
   );

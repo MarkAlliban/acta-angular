@@ -1,0 +1,12 @@
+@if (!edition) {
+  <app-kosh
+    [message]="`Invalid edition: ${shipService.editionName() || 'please choose an edition'}`"
+  />
+}
+@if (edition?.id === '2e') {
+  <app-crits-se />
+} @else if (edition?.id === 'ar') {
+  <app-crits-ar />
+} @else {
+  <app-crits-pp />
+}
