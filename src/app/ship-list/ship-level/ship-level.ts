@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 
 import { ShipService } from '../../ship.service';
 import { Level, MenuShip, Race } from '../../data/types';
@@ -11,20 +11,17 @@ import { RouterLink } from '@angular/router';
   styleUrl: './ship-level.scss',
   templateUrl: './ship-level.html',
 })
-export class ShipLevel implements OnInit {
+export class ShipLevel {
   shipService = inject(ShipService);
 
   edition = this.shipService.edition;
   source = input.required<string>();
   race = input.required<Race>();
   level = input.required<Level>();
-  ships = signal<MenuShip[]>([]);
-  allFighters = signal('');
-
-  ngOnInit() {
-    this.ships.set(this.shipService.shipsInLevel(this.source(), this.race(), this.level()) || []);
-    this.allFighters.set(this.shipService.getFighters(this.source(), this.race().raceId));
-  }
+  ships = computed(
+    () => this.shipService.shipsInLevel(this.source(), this.race(), this.level()) || [],
+  );
+  allFighters = computed(() => this.shipService.getFighters(this.source(), this.race().raceId));
 
   isFighter = (ship: MenuShip) => ship.type === SHEET_TYPE.fighter;
 }
