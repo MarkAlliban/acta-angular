@@ -1,13 +1,13 @@
-import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
+import { Component, computed, DestroyRef, effect, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ShipService } from '../ship.service';
 import { Ship } from '../data/types';
-import { SHEET_TYPE } from '../constants';
+import { MAX_REFRESHES, SHEET_TYPE } from '../constants';
 import { Kosh } from '../shared/kosh/kosh';
+import { Loading } from '../shared/loading/loading';
 import { ShipDataSheet } from './ship-data-sheet/ship-data-sheet';
 import { FighterDataSheet } from './ship-data-sheet/fighter-data-sheet';
-import { Loading } from '../shared/loading/loading';
 
 @Component({
   imports: [ShipDataSheet, FighterDataSheet, Kosh, Loading],
@@ -32,6 +32,9 @@ export class ShipSheet {
       .filter(Boolean)
       .sort((a, b) => (a!.type! < b!.type! ? -1 : 1)),
   );
+  needToRefresh = computed(
+    () => this.edition() && this.shipService.ships() !== null && !this.shipService.ships()!.length,
+  );
 
   isFighter = (ship: Ship) => ship.type === SHEET_TYPE.fighter;
 
@@ -44,9 +47,25 @@ export class ShipSheet {
   constructor() {
     const paramsSubscription = this.activatedRoute.queryParams.subscribe((params) => {
       const shipIDs = params['ShipID'];
-      this.shipIdArray.set(
-        shipIDs?.split(',').map((shipId: string) => Number.parseInt(shipId)) || [],
-      );
+      const newShipIDs = shipIDs?.split(',').map((shipId: string) => Number.parseInt(shipId)) || [];
+      if (
+        newShipIDs.length !== this.shipIdArray().length ||
+        newShipIDs.some((id: number, index: number) => this.shipIdArray()[index] !== id)
+      ) {
+        this.shipIdArray.set(newShipIDs);
+      }
+    });
+
+    effect(() => {
+      const r = (parseInt(this.activatedRoute.snapshot.queryParams['r']) || 0) + 1;
+      if (this.needToRefresh()) {
+        if (r > MAX_REFRESHES) return;
+        this.router.navigate([], { queryParams: { r }, queryParamsHandling: 'merge' });
+      } else {
+        if (this.edition() && this.shipService.ships() !== null && r !== 1) {
+          this.router.navigate([], { queryParams: { r: undefined }, queryParamsHandling: 'merge' });
+        }
+      }
     });
 
     this.destroyRef.onDestroy(() => paramsSubscription.unsubscribe());

@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { editions } from './data/editions';
 import { Level, MenuShip, Race, Ship } from './data/types';
-import { SHEET_TYPE } from './constants';
+import { MAX_REFRESHES, SHEET_TYPE } from './constants';
 
 import { races as racesPP } from './data/pp/races';
 import { levels as levelsPP } from './data/pp/levels';
@@ -25,6 +25,7 @@ export class ShipService {
   fleetShips = signal<number[]>([]);
   ships = signal<Ship[] | null>(null);
   list = signal<MenuShip[] | null>(null);
+  refreshCount = signal<number>(0);
 
   edition = computed(() => editions.find((edition) => edition.id === this.editionName()));
   levels = computed(() => {
@@ -102,7 +103,7 @@ export class ShipService {
       localStorage
         .getItem(this.edition()!.fleetKey)
         ?.split(',')
-				.filter(Boolean)
+        .filter(Boolean)
         .map((id) => +id) || [];
     shipIDs.push(shipId);
     localStorage.setItem(this.edition()!.fleetKey, shipIDs.filter(Boolean).join(','));
@@ -135,10 +136,14 @@ export class ShipService {
   };
 
   constructor() {
-    const editionSubscription = this.activatedRoute.queryParams.subscribe((params) => {
+    const paramSubscription = this.activatedRoute.queryParams.subscribe((params) => {
       const newEdition = params['edition'] || '';
       if (this.editionName() !== newEdition) {
         this.editionName.set(newEdition.toLowerCase());
+      }
+      const r = parseInt(params['r'] || '0');
+      if (this.refreshCount() !== r) {
+        this.refreshCount.set(r);
       }
     });
 
@@ -155,6 +160,7 @@ export class ShipService {
     });
 
     effect(() => {
+      if (this.refreshCount() > MAX_REFRESHES) return;
       this.list.set(null);
       this.ships.set(null);
       switch (this.editionName()) {
@@ -204,6 +210,6 @@ export class ShipService {
       }
     });
 
-    this.destroyRef.onDestroy(() => editionSubscription.unsubscribe());
+    this.destroyRef.onDestroy(() => paramSubscription.unsubscribe());
   }
 }

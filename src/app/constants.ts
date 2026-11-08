@@ -11,3 +11,5 @@ export const SHEET_TYPE: {
   station: 4,
   ancient: 5,
 };
+
+export const MAX_REFRESHES = 5;
