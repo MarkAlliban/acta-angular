@@ -121,7 +121,7 @@ button {
     width: 100%;
   }
   > app-fighter-data-sheet {
-    width: calc((100% - 1rem) / 2);
+    width: calc(100% - 1rem);
   }
   &.no-ships {
     padding: 1rem;
@@ -145,5 +145,10 @@ button {
 @media #{variables.$media-query-md} {
   h1 {
     font-size: 2rem;
+  }
+  .ship-container {
+    > app-fighter-data-sheet {
+      width: calc((100% - 1rem) / 2);
+    }
   }
 }
